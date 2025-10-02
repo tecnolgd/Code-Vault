@@ -38,35 +38,33 @@ class analyzer{
         std::cout << "Total Codebase Size: " << totalSizeBytes << " bytes\n";
     }
     int sortFileOnByte(bool x){
-        
-
-         //function to sort files based on byte size
+        //function to sort files based on byte size
         for( int i=0;i<files.size()-1;i++){
+             for(int j=0;j<files.size()-1-i;j++){
 
-            for(int j=0;j<files.size()-1-i;j++){
                 if(files[j].byte_size>files[j+1].byte_size){ //to sort bytes
                 auto t=files[j].byte_size;
                 files[j].byte_size=files[j+1].byte_size;
                 files[j+1].byte_size=t;
 
-                auto s=files[j].name;  //to sort file names
+                auto s=files[j].name;  //to sort file names , 'auto' - for automatic data type 
                 files[j].name=files[j+1].name;
                 files[j+1].name=s;
+                }
             }
-            }
-           
-            if(x){
+        }
+
+        if(x){ //this would work if x is 1 ,i.e when the sortbyte function is called
         std::cout<<"Sorted files based on bytes :\n";
         for(int i=0;i<files.size();i++){
             std::cout << " - File: " << files[i].name << " (" << files[i].byte_size << " bytes)\n";
        }
     }
-}
-    int size=files.size();
-    return files[size-1].byte_size;
+    int size=files.size(); 
+    return files[size-1].byte_size; //return the max bytes since the sort is ascending order
 }
     void minMax(){
-        int x=sortFileOnByte(0);
+        int x=sortFileOnByte(0); //this makes sure the sortbyte bool x has value zeo so as to skip the sorted files display
         std::cout<<"max sized byte file:"<<x;
         
     }
@@ -91,13 +89,11 @@ int main() {
             a.populate_data();
         } else if (command == "report") {
             a.reportData();
-        }
-          else if(command == "sortbyte"){
+        } else if(command == "sortbyte"){
              a.sortFileOnByte(1);
-          }
-          else if(command == "maxbyte"){
+        } else if(command == "maxbyte"){
              a.minMax();
-          } else if (command == "help") {
+        } else if (command == "help") {
             std::cout << "-- commands --\n populate - reading /fetching file names and byte size\n sortbyte - display the files sorted based on byte size\n report - summarize key findings regarding file data\n maxbyte - gives the max byte file\n exit - terminate from the application\n";
         } else {
             std::cout << "Unknown command. Try using 'help'\n";
