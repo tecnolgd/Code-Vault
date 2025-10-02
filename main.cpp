@@ -34,7 +34,6 @@ class analyzer{
             std::cout << " - File: " << files[i].name << " (" << files[i].byte_size << " bytes)\n";
             totalSizeBytes += files[i].byte_size; //total bytes size
         }
-
         std::cout << "\nTotal Files Stored: " << files.size() << "\n"; //size() function
         std::cout << "Total Codebase Size: " << totalSizeBytes << " bytes\n";
     }
@@ -49,7 +48,6 @@ class analyzer{
 int main() {
     analyzer a; //object
     std::string command;
-    
     std::cout << "Welcome to CodeVault Basic. Focus: Vector/Array Operations.\n";
     
     while (true) {
@@ -67,7 +65,6 @@ int main() {
             std::cout << "Unknown command. Try using 'help'\n";
         }
     }
-
     return 0;
 }
 
