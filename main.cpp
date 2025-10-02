@@ -37,18 +37,38 @@ class analyzer{
         std::cout << "\nTotal Files Stored: " << files.size() << "\n"; //size() function
         std::cout << "Total Codebase Size: " << totalSizeBytes << " bytes\n";
     }
-    void sortFileOnByte(){ //function to sort files based on byte size
-        for( int i=0;i<files.size();i++){
-            if(files[i].byte_size>files[i+1].byte_size){
-                auto t=files[i].byte_size;
-                files[i].byte_size=files[i+1].byte_size;
-                files[i+1].byte_size=t;
+    int sortFileOnByte(bool x){
+        
+
+         //function to sort files based on byte size
+        for( int i=0;i<files.size()-1;i++){
+
+            for(int j=0;j<files.size()-1-i;j++){
+                if(files[j].byte_size>files[j+1].byte_size){ //to sort bytes
+                auto t=files[j].byte_size;
+                files[j].byte_size=files[j+1].byte_size;
+                files[j+1].byte_size=t;
+
+                auto s=files[j].name;  //to sort file names
+                files[j].name=files[j+1].name;
+                files[j+1].name=s;
             }
-        }
+            }
+           
+            if(x){
         std::cout<<"Sorted files based on bytes :\n";
         for(int i=0;i<files.size();i++){
             std::cout << " - File: " << files[i].name << " (" << files[i].byte_size << " bytes)\n";
        }
+    }
+}
+    int size=files.size();
+    return files[size-1].byte_size;
+}
+    void minMax(){
+        int x=sortFileOnByte(0);
+        std::cout<<"max sized byte file:"<<x;
+        
     }
     // Future Expansion Point: This is where advanced features will go.
     // Example: void searchFile(const std::string& name); // Linear Search!
@@ -73,9 +93,12 @@ int main() {
             a.reportData();
         }
           else if(command == "sortbyte"){
-             a.sortFileOnByte();
+             a.sortFileOnByte(1);
+          }
+          else if(command == "maxbyte"){
+             a.minMax();
           } else if (command == "help") {
-            std::cout << "-- commands --\n populate - reading /fetching file names and byte size\n sortbyte - display the files sorted based on byte size\n report - summarize key findings regarding file data\n exit - terminate from the application\n";
+            std::cout << "-- commands --\n populate - reading /fetching file names and byte size\n sortbyte - display the files sorted based on byte size\n report - summarize key findings regarding file data\n maxbyte - gives the max byte file\n exit - terminate from the application\n";
         } else {
             std::cout << "Unknown command. Try using 'help'\n";
         }
