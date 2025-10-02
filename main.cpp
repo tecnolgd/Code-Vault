@@ -5,7 +5,7 @@
 
 struct fileStructure {
   std::string name;
-  long long byte_size = 0; //for large number storage (since files have a lot of bytes)
+  long long byte_size; //for large number storage (since files have a lot of bytes)
 };
 
 class analyzer{
@@ -37,7 +37,19 @@ class analyzer{
         std::cout << "\nTotal Files Stored: " << files.size() << "\n"; //size() function
         std::cout << "Total Codebase Size: " << totalSizeBytes << " bytes\n";
     }
-    
+    void sortFileOnByte(){ //function to sort files based on byte size
+        for( int i=0;i<files.size();i++){
+            if(files[i].byte_size>files[i+1].byte_size){
+                auto t=files[i].byte_size;
+                files[i].byte_size=files[i+1].byte_size;
+                files[i+1].byte_size=t;
+            }
+        }
+        std::cout<<"Sorted files based on bytes :\n";
+        for(int i=0;i<files.size();i++){
+            std::cout << " - File: " << files[i].name << " (" << files[i].byte_size << " bytes)\n";
+       }
+    }
     // Future Expansion Point: This is where advanced features will go.
     // Example: void searchFile(const std::string& name); // Linear Search!
 
@@ -59,8 +71,11 @@ int main() {
             a.populate_data();
         } else if (command == "report") {
             a.reportData();
-        } else if (command == "help") {
-            std::cout << "-- commands --\n populate - reading /fetching file names and byte size\n report - summarize key findings regarding file data\n exit - terminate from the application\n";
+        }
+          else if(command == "sortbyte"){
+             a.sortFileOnByte();
+          } else if (command == "help") {
+            std::cout << "-- commands --\n populate - reading /fetching file names and byte size\n sortbyte - display the files sorted based on byte size\n report - summarize key findings regarding file data\n exit - terminate from the application\n";
         } else {
             std::cout << "Unknown command. Try using 'help'\n";
         }
