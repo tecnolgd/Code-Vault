@@ -32,8 +32,8 @@ class analyzer{
         
         // CORE DSA: Iterating over the entire vector (array).
         for (int i=0; i<files.size();i++) { // for each loop ,const auto ??
-            std::cout << " - File: " << files[i] << " (" << files. << " bytes)\n";
-            totalSizeBytes += byte_size; //total bytes size
+            std::cout << " - File: " << files[i].name << " (" << files[i].byte_size << " bytes)\n";
+            totalSizeBytes += files[i].byte_size; //total bytes size
         }
 
         std::cout << "\nTotal Files Stored: " << files.size() << "\n"; //size() function
