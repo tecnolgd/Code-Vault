@@ -60,7 +60,7 @@ int main() {
         } else if (command == "report") {
             a.reportData();
         } else if (command == "help") {
-            std::cout << "Commands:\n populate - reading /fetching file names and byte size\n report - summarize key findings regarding file data\n exit - terminate from the application\n";
+            std::cout << "-- commands --\n populate - reading /fetching file names and byte size\n report - summarize key findings regarding file data\n exit - terminate from the application\n";
         } else {
             std::cout << "Unknown command. Try using 'help'\n";
         }
