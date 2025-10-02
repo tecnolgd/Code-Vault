@@ -25,8 +25,7 @@ class analyzer{
         if (files.empty()) { //checks if file is empty or not
             std::cout << "Vector is empty. Run 'populate' first.\n";
             return;
-        }
-
+        }                                                               
         std::cout << "\n--- CodeVault Vector Report (Summation) ---\n"; //report summary 
         long long totalSizeBytes = 0;
         
