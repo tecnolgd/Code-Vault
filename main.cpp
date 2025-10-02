@@ -15,14 +15,14 @@ class analyzer{
   void populate_data(){ //reading files with bytes size in each file
     std::cout<<"--poplating vector with test data---\n";
     files.clear();
-   
+        // sample raw coded file names for testing
         files.push_back({"main.cpp", 1250});//pushing file name and byte size to vector files 
-        files.push_back({"header.hpp", 450});
+        files.push_back({"header.hpp", 450}); //basically stack operation
         files.push_back({"utility.cpp", 2100});
         files.push_back({"config.h", 55});
   }
         void reportData() { //report generation function
-        if (files.empty()) {
+        if (files.empty()) { //checks if file is empty or not
             std::cout << "Vector is empty. Run 'populate' first.\n";
             return;
         }
@@ -31,9 +31,9 @@ class analyzer{
         long long totalSizeBytes = 0;
         
         // CORE DSA: Iterating over the entire vector (array).
-        for (const auto& file : files) { // for each loop ,const auto ??
-            std::cout << " - File: " << file.name << " (" << file.byte_size << " bytes)\n";
-            totalSizeBytes += file.byte_size; //total bytes size
+        for (int i=0; i<files.size();i++) { // for each loop ,const auto ??
+            std::cout << " - File: " << files[i] << " (" << files. << " bytes)\n";
+            totalSizeBytes += byte_size; //total bytes size
         }
 
         std::cout << "\nTotal Files Stored: " << files.size() << "\n"; //size() function
@@ -56,7 +56,6 @@ int main() {
     while (true) {
         std::cout << "\n>>";
         std::cin >> command;
-
         if (command == "exit") {
             break;
         } else if (command == "populate") {
@@ -64,14 +63,15 @@ int main() {
         } else if (command == "report") {
             a.reportData();
         } else if (command == "help") {
-            std::cout << "Commands: populate, report, exit\n";
+            std::cout << "Commands:\n populate - reading /fetching file names and byte size\n report - summarize key findings regarding file data\n exit - terminate from the application\n";
         } else {
-            std::cout << "Unknown command.\n";
+            std::cout << "Unknown command. Try using 'help'\n";
         }
     }
 
     return 0;
 }
+
 
 
     
