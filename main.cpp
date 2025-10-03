@@ -70,19 +70,15 @@ class analyzer{
         std::cout<<"max sized byte file:"<<x;
         
     }
-    void searchfile(){
+    void searchfile(){ //to search the file vector based on the file name. The vector is already sorted.
         int size=files.size();
-        int key,t;
-        
-        
-        
+        int key; //key - for condition verification
         int low=0,mid,high=size-1;
         std::string fname;
-        
-        std::cout<<"enter file to be searched";
+        std::cout<<"Enter name of file to be searched ";
         std::cin>>fname;
     
-        while(low<=high){
+        while(low<=high){   //binary search algorithm
             mid=(low+high)/2;
             if(files[mid].name== fname){
                 key=1;
@@ -93,27 +89,16 @@ class analyzer{
                 else
                 high = mid-1;
         }
-             if(key==1){
-                std::cout<<"file found at location "<<mid<<"with "<<files[mid].byte_size<<"bytes"<<std::endl;
-                
-                
-             }
-             else{
-                
-                std::cout<<"file not found .try with a correct name"<<std::endl;
-                
-                }
-                
-             }
+        if(key==1){
+            std::cout<<"File found at location "<<mid<<" with "<<files[mid].byte_size<<" bytes"<<std::endl;
+        }
+        else{
+            std::cout<<"File not found, Try with a correct name"<<std::endl;
+        }
+    }
             
              
-             
-        
-
-
-    
-
-    // Future Expansion Point: This is where advanced features will go.
+     // Future Expansion Point: This is where advanced features will go.
     // Example: void searchFile(const std::string& name); // Linear Search!
 
 
@@ -128,7 +113,7 @@ int main() {
     while (true) {
         std::cout << "\n>>";
         std::cin >> command;
-        if (command == "exit") {
+        if ((command == "exit")||(command=="quit")) {
             break;
         } else if (command == "populate") {
             a.populate_data();
@@ -141,7 +126,7 @@ int main() {
         } else if(command == "fsearch"){
              a.searchfile();
         }else if (command == "help") {
-            std::cout << "-- commands --\n populate - reading /fetching file names and byte size\n sortbyte - display the files sorted based on byte size\n report - summarize key findings regarding file data\n maxbyte - gives the max byte file\n exit - terminate from the application\n";
+            std::cout << "-- commands --\n populate  - reading /fetching file names and byte size\n sortbyte  - display the files sorted based on byte size\n report    - summarize key findings regarding file data\n fsearch   - to sreach for a file based on its name\n maxbyte   - gives the max byte file\n exit/quit - terminate from the application\n";
         } else {
             std::cout << "Unknown command. Try using 'help'\n";
         }
