@@ -72,23 +72,34 @@ class analyzer{
     }
     void searchfile(){
         int size=files.size();
-        std::string key;
+        int key;
+        std::string fname;
         
         
         int low=0,mid,high=size-1;
         std::string fname;
          sortFileOnByte(0);
         std::cout<<"enter file to be searched";
-        //std::cin>>key;
-        std::cout<<x.files();
-        /*while(low<=high){
+        std::cin>>fname;
+    
+        while(low<=high){
             mid=(low+high)/2;
-            if(x[mid] == key){
-
+            if(files[mid].name== fname){
+                key=1;
+                break;
             }
-
-
-        }*/
+            else if(files[mid].name<fname)
+                low=mid+1;
+                else
+                high = mid-1;
+             }
+             if(key==1){
+                std::cout<<"file found at location "<<mid<<"with "<<files[mid].byte_size<<"bytes"<<std::endl;
+             }
+             else{
+                std::cout<<"file not found .try with a correct name"<<std::endl;
+             }
+             
         
 
 
