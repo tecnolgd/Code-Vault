@@ -72,13 +72,13 @@ class analyzer{
     }
     void searchfile(){
         int size=files.size();
-        int key,t=1;
+        int key,t;
         
         
         
         int low=0,mid,high=size-1;
         std::string fname;
-         while(t){
+         
         std::cout<<"enter file to be searched";
         std::cin>>fname;
     
@@ -95,20 +95,26 @@ class analyzer{
         }
              if(key==1){
                 std::cout<<"file found at location "<<mid<<"with "<<files[mid].byte_size<<"bytes"<<std::endl;
-                break;
+                t=0;
+                
              }
              else{
+                
                 std::cout<<"file not found .try with a correct name"<<std::endl;
+                
+                while(t){
                 searchfile();
+                std::cout<<"to terminate search, enter 0 ,to co`ntinue search enter 1"<<std::endl;
+                std::cin>>t;
+                }
              }
             
-             std::cout<<"to terminate search, enter 0";
-             std::cin>>t;
+             
              
         
 
 
-    }
+    
 }
     // Future Expansion Point: This is where advanced features will go.
     // Example: void searchFile(const std::string& name); // Linear Search!
