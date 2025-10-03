@@ -73,7 +73,7 @@ class analyzer{
     void searchfile(){
         int size=files.size();
         int key;
-        std::string fname;
+        
         
         
         int low=0,mid,high=size-1;
@@ -129,7 +129,9 @@ int main() {
              a.sortFileOnByte(1);
         } else if(command == "maxbyte"){
              a.minMax();
-        } else if (command == "help") {
+        } else if(command == "fsearch"){
+             a.searchfile();
+        }else if (command == "help") {
             std::cout << "-- commands --\n populate - reading /fetching file names and byte size\n sortbyte - display the files sorted based on byte size\n report - summarize key findings regarding file data\n maxbyte - gives the max byte file\n exit - terminate from the application\n";
         } else {
             std::cout << "Unknown command. Try using 'help'\n";
