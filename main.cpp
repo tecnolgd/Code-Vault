@@ -12,7 +12,7 @@ class analyzer{
   private: //private- to avoid unwanted file vector corruption
   std::vector <fileStructure> files; //vector to store files
   public:
-  int size=files.size(); 
+  
   void populate_data(){ //reading files with bytes size in each file
     std::cout<<"--poplating vector with test data---\n";
     files.clear();
@@ -22,6 +22,7 @@ class analyzer{
         files.push_back({"utility.cpp", 2100});
         files.push_back({"config.h", 55});
   }
+   
         void reportData() { //report generation function
         if (files.empty()) { //checks if file is empty or not
             std::cout << "Vector is empty. Run 'populate' first.\n";
@@ -38,7 +39,7 @@ class analyzer{
         std::cout << "\nTotal Files Stored: " << files.size() << "\n"; //size() function
         std::cout << "Total Codebase Size: " << totalSizeBytes << " bytes\n";
     }
-    auto sortFileOnByte(bool x){
+    int sortFileOnByte(bool x){
         //function to sort files based on byte size
         for( int i=0;i<files.size()-1;i++){
              for(int j=0;j<files.size()-1-i;j++){
@@ -61,12 +62,16 @@ class analyzer{
             std::cout << " - File: " << files[i].name << " (" << files[i].byte_size << " bytes)\n";
        }
     }
-    
+    int size= files.size();
     return files[size-1].byte_size;//return the max bytes since the sort is ascending order
 }
     void minMax(){
         int x= sortFileOnByte(0);//this makes sure the sortbyte bool x has value zeo so as to skip the sorted files display
         std::cout<<"max sized byte file:"<<x;
+        
+    }
+    void searchfile(){
+        std::string fname;
         
     }
     // Future Expansion Point: This is where advanced features will go.
