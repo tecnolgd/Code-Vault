@@ -39,7 +39,7 @@ class analyzer{
         std::cout << "\nTotal Files Stored: " << files.size() << "\n"; //size() function
         std::cout << "Total Codebase Size: " << totalSizeBytes << " bytes\n";
     }
-    int sortFileOnByte(bool x){
+    auto sortFileOnByte(bool x){
         //function to sort files based on byte size
         for( int i=0;i<files.size()-1;i++){
              for(int j=0;j<files.size()-1-i;j++){
@@ -71,8 +71,27 @@ class analyzer{
         
     }
     void searchfile(){
-        std::string fname;
+        int size=files.size();
+        std::string key;
         
+        
+        int low=0,mid,high=size-1;
+        std::string fname;
+         sortFileOnByte(0);
+        std::cout<<"enter file to be searched";
+        //std::cin>>key;
+        std::cout<<x.files();
+        /*while(low<=high){
+            mid=(low+high)/2;
+            if(x[mid] == key){
+
+            }
+
+
+        }*/
+        
+
+
     }
     // Future Expansion Point: This is where advanced features will go.
     // Example: void searchFile(const std::string& name); // Linear Search!
