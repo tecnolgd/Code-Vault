@@ -104,9 +104,9 @@ class analyzer{
 
 };
 
-class cliManager{
+class cliManager{ //cli managing class for display of main menu
     public:
-    void runterminal(analyzer &a){
+    void runterminal(analyzer &a){ //function to run the terminal as a whole 
     std::string command;
     std::cout << "Welcome to CodeVault Basic. Focus: Vector/Array Operations.\n";
     
