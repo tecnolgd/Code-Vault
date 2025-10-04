@@ -106,7 +106,7 @@ class analyzer{
 
 class cliManager{ //cli managing class for display of main menu
     public:
-    void runterminal(analyzer *a){ //function to run the terminal as a whole 
+    void runterminal(analyzer &a){ //function to run the terminal as a whole 
     std::string command;
     std::cout << "Welcome to CodeVault Basic. Focus: Vector/Array Operations.\n";
     
@@ -120,11 +120,11 @@ class cliManager{ //cli managing class for display of main menu
         } else if (command == "report") {
             a.reportData();
         } else if(command == "sortbyte"){
-             a.sortFileOnByte(1);
+            a.sortFileOnByte(1);
         } else if(command == "maxbyte"){
-             a.minMax();
+            a.minMax();
         } else if(command == "fsearch"){
-             a.searchfile();
+            a.searchfile();
         }else if (command == "help") {
             std::cout << "-- commands --\n populate  - reading /fetching file names and byte size\n sortbyte  - display the files sorted based on byte size\n report    - summarize key findings regarding file data\n fsearch   - to sreach for a file based on its name\n maxbyte   - gives the max byte file\n exit/quit - terminate from the application\n";
         } else {
@@ -138,7 +138,7 @@ class cliManager{ //cli managing class for display of main menu
 int main() {
     analyzer a; //object of class analyser
     cliManager cli; //object of class cliManager
-    cli.runterminal(&a); //passing address of class analyser object 'a' to function 'runterminal' 
+    cli.runterminal(a); //passing address of class analyser object 'a' to function 'runterminal' 
 
     /* Flow of the cli.runterminal(&a); ->  object a  address--> passed to runterminal()function as argument --> later derefenced to get data or value from it --> runterminal() is executed with cli i.e., ' cli.runterminal(&a) '*/
 
