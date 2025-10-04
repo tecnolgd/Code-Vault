@@ -67,7 +67,7 @@ class analyzer{
 }
     void minMax(){
         int x= sortFileOnByte(0);//this makes sure the sortbyte bool x has value zeo so as to skip the sorted files display
-        std::cout<<"max sized byte file:"<<x;
+        std::cout<<"Max byte containing file: "<<x;
         
     }
     void searchfile(){ //to search the file vector based on the file name. The vector is already sorted.
@@ -75,7 +75,7 @@ class analyzer{
         int key; //key - for condition verification
         int low=0,mid,high=size-1;
         std::string fname;
-        std::cout<<"Enter name of file to be searched ";
+        std::cout<<"Enter name of the file to be searched :";
         std::cin>>fname;
     
         while(low<=high){   //binary search algorithm
@@ -93,7 +93,7 @@ class analyzer{
             std::cout<<"File found at location "<<mid<<" with "<<files[mid].byte_size<<" bytes"<<std::endl;
         }
         else{
-            std::cout<<"File not found, Try with a correct name"<<std::endl;
+            std::cout<<"File not found. Try with a correct name"<<std::endl;
         }
     }
             
@@ -126,7 +126,7 @@ class cliManager{ //cli managing class for display of main menu
         } else if(command == "fsearch"){
             a.searchfile();
         }else if (command == "help") {
-            std::cout << "-- commands --\n populate  - reading /fetching file names and byte size\n sortbyte  - display the files sorted based on byte size\n report    - summarize key findings regarding file data\n fsearch   - to sreach for a file based on its name\n maxbyte   - gives the max byte file\n exit/quit - terminate from the application\n";
+            std::cout << "-- Available commands --\n populate  - reading /fetching file names and byte size\n sortbyte  - display the files sorted based on byte size\n report    - summarize key findings regarding file data\n fsearch   - to sreach for a file based on its name\n maxbyte   - gives the max byte file\n exit/quit - terminate from the application\n";
         } else {
             std::cout << "Unknown command. Try using 'help'\n";
         }
