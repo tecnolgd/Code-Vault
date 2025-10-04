@@ -104,9 +104,9 @@ class analyzer{
 
 };
 
-// --- Execution Focus: Simplified Main Loop ---
-int main() {
-    analyzer a; //object
+class cliManager{
+    public:
+    void runterminal(analyzer &a){
     std::string command;
     std::cout << "Welcome to CodeVault Basic. Focus: Vector/Array Operations.\n";
     
@@ -131,6 +131,15 @@ int main() {
             std::cout << "Unknown command. Try using 'help'\n";
         }
     }
+}
+};
+
+// --- Execution Focus: Simplified Main Loop ---
+int main() {
+    analyzer a; //object 
+    cliManager cli;
+    cli.runterminal(a);
+    
     return 0;
 }
 
