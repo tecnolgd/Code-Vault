@@ -141,9 +141,8 @@ int main() {
     cli.runterminal(&a); //passing address of class analyser object 'a' to function 'runterminal' 
 
     /* Flow of the cli.runterminal(&a); ->  object a  address--> passed to runterminal()function as argument --> later derefenced to get data or value from it --> runterminal() is executed with cli i.e., ' cli.runterminal(&a) '*/
-    
+
     //Basically, class analyser is the argument for function runterminal() which runs inside class cliManager.
-    
     return 0;
 }
 
