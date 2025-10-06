@@ -80,7 +80,7 @@ class analyzer{
     
         while(low<=high){   //binary search algorithm
             mid=(low+high)/2;
-            if(files[mid].name== fname){
+            if(files[mid].name == fname){
                 key=1;
                 break;
             }
