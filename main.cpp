@@ -70,7 +70,8 @@ class analyzer{
         std::cout<<"Max byte containing file: "<<x;
         
     }
-    void searchfile(){ //to search the file vector based on the file name. The vector is already sorted.
+    void searchfile(){ //to search the file vector based on the file name.
+        int x= sortFileOnByte(0); //to sort the vector before binary search.
         int size=files.size();
         int key; //key - for condition verification
         int low=0,mid,high=size-1;
