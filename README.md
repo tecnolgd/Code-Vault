@@ -2,7 +2,7 @@
 
 # CODE VAULT-Code Analyzer
 
-
+## Documentation 📄
 ## Features ⚙️⚙️
 
 ## Tech Stack🚀
@@ -12,6 +12,7 @@
 ## Future Upgrades 🛰️
 
 ## How to run ?🔛
+
 
 #### Author
 ***tecnolgd***
