@@ -1,4 +1,4 @@
-
+![MIT License](https://img.shields.io/github/license/tecnolgd/PredictaExpense-cpp.svg)
 
 # CODE VAULT-Code Analyzer
 
