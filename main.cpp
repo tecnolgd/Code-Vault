@@ -100,23 +100,30 @@ class analyzer{
         }
     }
     
-    void lineCount(){
-        std::string filepath;
+    void lineCount(){   //function to count lines of code in a desired file (any file in the system)
+        std::string filepath; //string to store filename
         std::cout<<"enter filename ";
         std::cin>>filepath;
-        std::ifstream file(filepath);
-        if(! file.is_open()){
+        std::ifstream file(filepath); //open file for reading
+        if(! file.is_open()){ //to check whether the file exists
             std::cout<<"Error: Could not open file "<<filepath<<" !"<<std::endl;
             return;
         }
-        int lCount=0;
-        std::string line;
+        int lCount=0; //line counter
+        std::string line; //string to store lines
 
-        while(std::getline(file,line)){
-            lCount++;
+        while(std::getline(file,line)){ //lines include tab spaces and goes until new line is encountered.
+            lCount++; //increment the lCount when new line is encountered.
         }
         file.close();
-        std::cout<<"The lines in file "<<filepath<<" :"<<lCount<<std::endl;
+        if (lCount > 0) { //to check whether file is empty and block any other possible errors.
+        std::cout<<std::endl;
+        std::cout << "Analysis Complete." << std::endl;
+        std::cout << "File: " <<filepath<< std::endl;
+        std::cout << "Total Lines of Code: " <<lCount<< std::endl;
+    } else {
+        std::cout << "Could not complete analysis. Check the path and file permissions." << std::endl;
+    }
     }
              
      // Future Expansion Point: This is where advanced features will go.
@@ -149,10 +156,10 @@ class cliManager{ //cli managing class for display of main menu
             a.searchfile();
         }else if(command == "flcount"){
             a.lineCount();
-        } if(command == "tcred"){
+        }else if(command == "tcred"){
             printf("\n\tCredits :\nAuthor: tecnolgd\nDocumentation at https://c.com\n");
         }else if (command == "help") {
-            std::cout << "\n\t-- Available commands --\n populate  - reading /fetching file names and byte size\n sortbyte  - display the files sorted based on byte size\n report    - summarize key findings regarding file data\n fsearch   - to sreach for a file based on its name\n maxbyte   - gives the max byte file\n exit/quit - terminate from the application\n tcred - tool credits and doc details\n";
+            std::cout << "\n\t-- Available commands --\n populate  - reading /fetching file names and byte size\n sortbyte  - display the files sorted based on byte size\n report    - summarize key findings regarding file data\n fsearch   - to sreach for a file based on its name\n maxbyte   - gives the max byte file\n exit/quit - terminate from the application\n flcount    - display number of lines of code in a desired file\n tcred - tool credits and doc details\n";
         } else {
             std::cout << "Unknown command. Try using 'help'\n";
         }
