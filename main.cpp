@@ -101,11 +101,13 @@ class analyzer{
     }
     
     void lineCount(){
-        const std::string filepath;
+        std::string filepath;
         std::cout<<"enter filename ";
+        std::cin>>filepath;
         std::ifstream file(filepath);
         if(! file.is_open()){
             std::cout<<"Error: Could not open file "<<filepath<<" !"<<std::endl;
+            return;
         }
         int lCount=0;
         std::string line;
@@ -132,6 +134,7 @@ class cliManager{ //cli managing class for display of main menu
     while (true) {
         std::cout << "\n>>";
         std::cin >> command;
+        std::cin.clear();
         if ((command == "exit")||(command=="quit")) {
             break;
         } else if (command == "populate") {
@@ -168,10 +171,3 @@ int main() {
     //Basically, class analyser is the argument for function runterminal() which runs inside class cliManager.
     return 0;
 }
-
-
-
-    
-
-
- 
