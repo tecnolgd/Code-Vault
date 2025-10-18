@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
 
 struct fileStructure {
   std::string name;
@@ -97,7 +98,21 @@ class analyzer{
             std::cout<<"File not found. Try with a correct name"<<std::endl;
         }
     }
-            
+    
+    int lineCount(const std::string &filepath){
+        std::ifstream file(filepath);
+        if(! file.is_open()){
+            std::cout<<"Error: Could not open file "<<filepath<<" !"<<std::endl;
+        }
+        int lCount=0;
+        std::string line;
+
+        while(std::getline(file,line)){
+            lCount++;
+        }
+        file.close();
+        return lCount;
+    }
              
      // Future Expansion Point: This is where advanced features will go.
     // Example: void searchFile(const std::string& name); // Linear Search!
