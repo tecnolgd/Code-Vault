@@ -159,7 +159,7 @@ class cliManager{ //cli managing class for display of main menu
         }else if(command == "tcred"){
             printf("\n\tCredits :\nAuthor: tecnolgd\nDocumentation at https://c.com\n");
         }else if (command == "help") {
-            std::cout << "\n\t-- Available commands --\n populate  - reading /fetching file names and byte size\n sortbyte  - display the files sorted based on byte size\n report    - summarize key findings regarding file data\n fsearch   - to sreach for a file based on its name\n maxbyte   - gives the max byte file\n exit/quit - terminate from the application\n flcount    - display number of lines of code in a desired file\n tcred - tool credits and doc details\n";
+            std::cout << "\n\t-- Available commands --\n populate  - reading /fetching file names and byte size\n sortbyte  - display the files sorted based on byte size\n report    - summarize key findings regarding file data\n fsearch   - to sreach for a file based on its name\n maxbyte   - gives the max byte file\n exit/quit - terminate from the application\n flcount   - display number of lines of code in a desired file\n tcred     - tool credits and doc details\n";
         } else {
             std::cout << "Unknown command. Try using 'help'\n";
         }
