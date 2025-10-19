@@ -25,12 +25,11 @@ class analyzer{
         files.push_back({"config.h", 55});
   }
    
-        void reportData() { //report generation function
+    void reportData() { //report generation function
         if (files.empty()) { //checks if file is empty or not
             std::cout << "Vector is empty. Run 'populate' first.\n";
             return;
-        }                                                               
-        std::cout << "\n--- CodeVault Vector Report (Summation) ---\n"; //report summary 
+        }                                                          std::cout << "\n--- CodeVault Vector Report (Summation) ---\n"; //report summary 
         long long totalSizeBytes = 0;
         
         // CORE DSA: Iterating over the entire vector (array).
