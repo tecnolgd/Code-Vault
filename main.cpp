@@ -12,18 +12,18 @@ struct fileStructure {
 
 class analyzer{
   private: //private- to avoid unwanted file vector corruption
-  std::vector <fileStructure> files; //vector to store files
+    std::vector <fileStructure> files; //vector to store files
   public:
   
-  void populate_data(){ //reading files with bytes size in each file
-    std::cout<<"--poplating vector with test data---\n";
-    files.clear();
+    void populate_data(){ //reading files with bytes size in each file
+        std::cout<<"--poplating vector with test data---\n";
+        files.clear();
         // sample raw coded file names for testing
         files.push_back({"main.cpp", 1250});//pushing file name and byte size to vector files 
         files.push_back({"header.hpp", 450}); //basically stack operation
         files.push_back({"utility.cpp", 2100});
         files.push_back({"config.h", 55});
-  }
+    }
    
     void reportData() { //report generation function
         if (files.empty()) { //checks if file is empty or not
@@ -58,19 +58,19 @@ class analyzer{
         }
 
         if(x){ //this would work if x is 1 ,i.e when the sortbyte function is called
-        std::cout<<"Sorted files based on bytes :\n";
-        for(int i=0;i<files.size();i++){
-            std::cout << " - File: " << files[i].name << " (" << files[i].byte_size << " bytes)\n";
-       }
+            std::cout<<"Sorted files based on bytes :\n";
+            for(int i=0;i<files.size();i++){
+                std::cout << " - File: " << files[i].name << " (" << files[i].byte_size << " bytes)\n";
+            }
+        }
+        int size= files.size();
+        return files[size-1].byte_size;//return the max bytes since the sort is ascending order
     }
-    int size= files.size();
-    return files[size-1].byte_size;//return the max bytes since the sort is ascending order
-}
     void minMax(){
         int x= sortFileOnByte(0);//this makes sure the sortbyte bool x has value zeo so as to skip the sorted files display
         std::cout<<"Max byte containing file: "<<x;
-        
     }
+
     void searchfile(){ //to search the file vector based on the file name.
         int x= sortFileOnByte(0); //to sort the vector before binary search.
         int size=files.size();
@@ -115,19 +115,19 @@ class analyzer{
             lCount++; //increment the lCount when new line is encountered.
         }
         file.close();
-        if (lCount > 0) { //to check whether file is empty and block any other possible errors.
-        std::cout<<std::endl;
-        std::cout << "Analysis Complete." << std::endl;
-        std::cout << "File: " <<filepath<< std::endl;
-        std::cout << "Total Lines of Code: " <<lCount<< std::endl;
-    } else {
-        std::cout << "Could not complete analysis. Check the path and file permissions." << std::endl;
-    }
+        if (lCount > 0) { //tocheck    whether file is empty and block any other possible errors.
+            std::cout<<std::endl;
+            std::cout << "Analysis Complete." << std::endl;
+            std::cout << "File: " <<filepath<< std::endl;
+            std::cout << "Total Lines of Code: " <<lCount<< std::endl;
+        }   
+        else {
+            std::cout << "Could not complete analysis. Check the path and file permissions." << std::endl;
+        }
     }
              
      // Future Expansion Point: This is where advanced features will go.
     // Example: void searchFile(const std::string& name); // Linear Search!
-
 
 };
 
