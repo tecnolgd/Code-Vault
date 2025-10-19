@@ -6,7 +6,7 @@
 # CODE VAULT-Code Analyzer
   ![Code Vault](cv_readme.png)
 
-  A command-line code analyser based on **C++** programming language and terminal operations. Easy to use and **get insights and anaysis reports** for code written by developers or coders.
+  A command-line static code analyser based on **C++** programming language and terminal operations. Easy to use and **get insights and anaysis reports** for code written by developers or coders.
 
 ## Documentation 📄
   The documentation for this application is available at <**weblink***> 
