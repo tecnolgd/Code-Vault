@@ -1,6 +1,7 @@
 ![MIT License](https://img.shields.io/github/license/tecnolgd/PredictaExpense-cpp.svg)
 ![Static Badge](https://img.shields.io/badge/tools-Open_Source-blue)
 ![Static Badge](https://img.shields.io/badge/interface-CLI-white)
+![Static Badge](https://img.shields.io/badge/build-C++-black)
 ![Static Badge](https://img.shields.io/badge/version-v0.0-orange)
 
 # CODE VAULT-Code Analyzer
