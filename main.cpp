@@ -14,7 +14,6 @@ class analyzer{
   private: //private- to avoid unwanted file vector corruption
     std::vector <fileStructure> files; //vector to store files
   public:
-  
     void populate_data(){ //reading files with bytes size in each file
         std::cout<<"--poplating vector with test data---\n";
         files.clear();
@@ -176,4 +175,5 @@ int main() {
 
     //Basically, class analyser is the argument for function runterminal() which runs inside class cliManager.
     return 0;
+
 }
