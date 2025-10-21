@@ -1,4 +1,4 @@
-//core logic code file
+//core logic file
 #include <iostream>
 #include <vector>
 #include <string>
@@ -146,13 +146,13 @@ class cliManager{ //cli managing class for display of main menu
             a.populate_data();
         } else if (command == "report") {//display file details like name and byte size.
             a.reportData();
-        } else if(command == "sortbyte"){
+        } else if(command == "sortbyte"){// sort the files based on byte size and display sorted file list.
             a.sortFileOnByte(1);
-        } else if(command == "maxbyte"){
+        } else if(command == "maxbyte"){//display the max byte sized file.
             a.minMax();
-        } else if(command == "fsearch"){
+        } else if(command == "fsearch"){// search for a file and display filename and location.
             a.searchfile();
-        }else if(command == "flcount"){
+        }else if(command == "flcount"){//count number of lines in any file in the system.
             a.lineCount();
         }else if(command == "tcred"){
             printf("\n\tCredits :\nAuthor: tecnolgd\nDocumentation at https://c.com\n");
@@ -177,5 +177,6 @@ int main() {
     return 0;
 
 }
+
 
 
