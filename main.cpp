@@ -142,9 +142,9 @@ class cliManager{ //cli managing class for display of main menu
         std::cin.clear();
         if ((command == "exit")||(command=="quit")) {
             break;
-        } else if (command == "populate") {
+        } else if (command == "populate") {//reading file names
             a.populate_data();
-        } else if (command == "report") {
+        } else if (command == "report") {//display file details like name and byte size.
             a.reportData();
         } else if(command == "sortbyte"){
             a.sortFileOnByte(1);
@@ -177,4 +177,5 @@ int main() {
     return 0;
 
 }
+
 
