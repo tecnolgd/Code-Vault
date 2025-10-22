@@ -10,6 +10,7 @@ struct fileStructure {
   long long byte_size; //for large number storage (since files have a lot of bytes)
 };
 
+//analyzer class
 class analyzer{
   private: //private- to avoid unwanted file vector corruption
     std::vector <fileStructure> files; //vector to store files
@@ -129,7 +130,7 @@ class analyzer{
     // Example: void searchFile(const std::string& name); // Linear Search!
 
 };
-
+// cliManager class
 class cliManager{ //cli managing class for display of main menu
     public:
     void runterminal(analyzer &a){ //function to run the terminal as a whole 
@@ -177,6 +178,7 @@ int main() {
     return 0;
 
 }
+
 
 
 
