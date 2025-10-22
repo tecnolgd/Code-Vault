@@ -25,6 +25,9 @@
 ## How to run ?🔛
 
 ## Readme Add-ons ➕
+* [ ] Documentation link
+* [ ] Test cases
+* [ ] Output Screenshots
 
 ---
 #### Author
