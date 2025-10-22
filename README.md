@@ -14,7 +14,10 @@
 ## Features ⚙️⚙️
 
 ## Tech Stack🚀
-
+* **C++**
+* Object-oriented programming (**OOP**)
+* Data Structures
+  
 ## How does it work ❓
 
 ## Future Upgrades 🛰️
