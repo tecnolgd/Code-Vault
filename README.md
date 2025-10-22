@@ -26,5 +26,6 @@
 
 ## Readme Add-ons ➕
 
+---
 #### Author
 ***tecnolgd***
