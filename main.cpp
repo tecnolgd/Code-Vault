@@ -1,4 +1,4 @@
-
+//core logic 
 #include <iostream>
 #include <vector>
 #include <string>
@@ -10,11 +10,11 @@ struct fileStructure {
   long long byte_size; //for large number storage (since files have a lot of bytes)
 };
 
+//analyzer class
 class analyzer{
   private: //private- to avoid unwanted file vector corruption
     std::vector <fileStructure> files; //vector to store files
   public:
-  
     void populate_data(){ //reading files with bytes size in each file
         std::cout<<"--poplating vector with test data---\n";
         files.clear();
@@ -130,7 +130,7 @@ class analyzer{
     // Example: void searchFile(const std::string& name); // Linear Search!
 
 };
-
+// cliManager class
 class cliManager{ //cli managing class for display of main menu
     public:
     void runterminal(analyzer &a){ //function to run the terminal as a whole 
@@ -149,15 +149,15 @@ class cliManager{ //cli managing class for display of main menu
             a.reportData();
         } else if(command =="sortbyte"){
             a.sortFileOnByte(1);
-        } else if(command == "maxbyte"){
+        } else if(command == "maxbyte"){//display the max byte sized file.
             a.minMax();
-        } else if(command == "fsearch"){
+        } else if(command == "fsearch"){// search for a file and display filename and location.
             a.searchfile();
-        }else if(command == "flcount"){
+        }else if(command == "flcount"){//count number of lines in any file in the system.
             a.lineCount();
-        }else if(command == "tcred"){
+        }else if(command == "tcred"){// credits and author details.
             printf("\n\tCredits :\nAuthor: tecnolgd\nDocumentation at https://c.com\n");
-        }else if (command == "help") {
+        }else if (command == "help") {// help option 
             std::cout << "\n\t-- Available commands --\n populate  - reading /fetching file names and byte size\n sortbyte  - display the files sorted based on byte size\n report    - summarize key findings regarding file data\n fsearch   - to sreach for a file based on its name\n maxbyte   - gives the max byte file\n exit/quit - terminate from the application\n flcount   - display number of lines of code in a desired file\n tcred     - tool credits and doc details\n";
         } else {
             std::cout << "Unknown command. Try using 'help'\n";
@@ -176,4 +176,11 @@ int main() {
 
     //Basically, class analyser is the argument for function runterminal() which runs inside class cliManager.
     return 0;
+
 }
+
+
+
+
+
+
