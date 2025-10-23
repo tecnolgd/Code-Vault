@@ -108,18 +108,18 @@ class analyzer{
             std::cout<<"Error: Could not open file "<<filepath<<" !"<<std::endl;
             return;
         }
-        int lCount=0; //line counter
+        int flCount=0; //line counter
         std::string line; //string to store lines
 
         while(std::getline(file,line)){ //lines include tab spaces and goes until new line is encountered.
-            lCount++; //increment the lCount when new line is encountered.
+            flCount++; //increment the lCount when new line is encountered.
         }
         file.close();
-        if (lCount > 0) { //tocheck    whether file is empty and block any other possible errors.
+        if (flCount > 0) { //tocheck    whether file is empty and block any other possible errors.
             std::cout<<std::endl;
             std::cout << "Analysis Complete." << std::endl;
             std::cout << "File: " <<filepath<< std::endl;
-            std::cout << "Total Lines of Code: " <<lCount<< std::endl;
+            std::cout << "Total Lines of Code: " <<flCount<< std::endl;
         }   
         else {
             std::cout << "Could not complete analysis. Check the path and file permissions." << std::endl;
@@ -143,11 +143,11 @@ class cliManager{ //cli managing class for display of main menu
         std::cin.clear();
         if ((command == "exit")||(command=="quit")) {
             break;
-        } else if (command == "populate") {
+        } else if (command =="populate") {
             a.populate_data();
-        } else if (command == "report") {
+        } else if (command =="report") {
             a.reportData();
-        } else if(command == "sortbyte"){
+        } else if(command =="sortbyte"){
             a.sortFileOnByte(1);
         } else if(command == "maxbyte"){
             a.minMax();
