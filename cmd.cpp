@@ -26,7 +26,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     }
     else if(command =="report"){
         std::cout << "Running full report. Analyzing current directory ('.') first." << std::endl;
-        analyzer.populate("."); // Load data from current folder
+        analyzer.populate("."); // need explanation !!!
         analyzer.report();
     }
     else if (command == "fsearch"){
@@ -35,5 +35,8 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
             std::cout << "Use: ./codevault search <filename_to_find>" << std::endl;
             return 1;
         }
+        a.analyze("."); // need explanation !!!
+        std::string fileName = argv[2]; // The file name to find is argv[2]
+        a.search(fileName);
     }
 }
