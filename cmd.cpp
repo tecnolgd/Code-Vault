@@ -8,7 +8,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         std::cout << "------------------------------------------" << std::endl;
         std::cout << "\tCodeVault - C++ Code Analyzer (Beta)" << std::endl;
         std::cout << "Error: At least two words needed\n" << std::endl;
-        std::cout<<"( Note: Try using \"help\")"<<std::endl;
+        std::cout<<"( Note: Try using \'help\')"<<std::endl;
         return 1;
     }
     std::string command = argv[1]; //first word is the command
@@ -39,4 +39,16 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         std::string fileName = argv[2]; // The file name to find is argv[2]
         a.search(fileName);
     }
+    else if (command == "fmax") {
+        // Load data first, then find the largest file.
+        a.analyze(".");
+        a.maxByte();
+        
+    }
+    else {
+        std::cout << "ERROR: Unknown command '" << command << ". Check \' help \' for available commands." << std::endl;
+        return 1; //default statement for error check.
+    }
+
+    return 0 //program success
 }
