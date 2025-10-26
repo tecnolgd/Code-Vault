@@ -14,13 +14,13 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     std::string command = argv[1]; //first word is the command
     analyzer a; //object of class analyser
 
-    if(command=="populate"){
-        if (argc != 3) {
+    if(command=="populate"){// to read the files or the directory
+        if (argc != 3) {// 3, since the populate needs the filename or directory as the 3rd word in the command.
             std::cout << "ERROR: 'analyze' requires a directory path." << std::endl;
             std::cout << "Use: ./codevault analyze <path_to_directory>" << std::endl;
             return 1;
         }
-        std::string path = argv[2];
+        std::string path = argv[2];// words start from 0 ,so 2is the 3rd word i.e., the filename.
         analyzer.populate(path);
         
     }
