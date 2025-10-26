@@ -11,7 +11,12 @@
 
 ## Documentation 📄
   The documentation for this application is available at <**weblink***> 
+  
 ## Features ⚙️⚙️
+* CLI application
+* Easy install
+* Smooth interface
+* Readable data
 
 ## Tech Stack🚀
 * **C++**
