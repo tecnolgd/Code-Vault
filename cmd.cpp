@@ -43,12 +43,10 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         // Load data first, then find the largest file.
         a.analyze(".");
         a.maxByte();
-        
     }
     else {
         std::cout << "ERROR: Unknown command '" << command << ". Check \' help \' for available commands." << std::endl;
         return 1; //default statement for error check.
     }
-
     return 0 //program success
 }
