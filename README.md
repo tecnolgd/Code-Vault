@@ -23,7 +23,7 @@
 * Object-oriented programming (**OOP**)
 * Data Structures
   
-## How does it work ❓
+## How it works ❓️
 
 ## Future Upgrades 🛰️
 
@@ -35,6 +35,5 @@
 * [ ] Output Screenshots
 * [ ] Operational requirements.
 
----
 #### Author
 ***tecnolgd***
