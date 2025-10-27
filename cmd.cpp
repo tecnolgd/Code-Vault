@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-
 //#include "main.cpp"
 
 int main(int argc, char* argv[]){ //to get the number of words used in the command to interpret the command given by the user.
@@ -21,13 +20,13 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
             return 1;
         }
         std::string path = argv[2];// words start from 0 ,so 2is the 3rd word i.e., the filename.
-        analyzer.populate(path);
+        a.populate(path);
         
     }
     else if(command =="report"){
         std::cout << "Running full report. Analyzing current directory ('.') first." << std::endl;
-        analyzer.populate("."); // need explanation !!!
-        analyzer.report();
+        a.populate("."); // need explanation !!!
+        a.report();
     }
     else if (command == "fsearch"){
         if (argc != 3) {
