@@ -13,7 +13,7 @@
   The documentation for this application is available at <**weblink***> 
   
 ## Features ⚙️⚙️
-* CLI application
+* Command line interface.
 * Easy install
 * Smooth interface
 * Readable data
@@ -22,6 +22,7 @@
 * **C++**
 * Object-oriented programming (**OOP**)
 * Data Structures
+  
   
 ## How it works ❓️
 
