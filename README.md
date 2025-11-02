@@ -32,7 +32,7 @@
 
 ## Readme Add-ons ➕
 * [ ] Documentation link
-* [ ] Test cases
+* [ ] Sample test cases
 * [ ] Output Screenshots
 * [ ] Operational requirements.
 
