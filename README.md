@@ -13,10 +13,10 @@
   The documentation for this application is available at <**weblink***> 
   
 ## Features ⚙️⚙️
-* Command line interface.
+* Command line interface
 * Easy install
 * Smooth interface
-* Readable data
+* Data Analysis
 
 ## Tech Stack🚀
 * **C++**
