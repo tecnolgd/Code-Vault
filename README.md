@@ -2,23 +2,29 @@
 ![Static Badge](https://img.shields.io/badge/tools-Open_Source-blue)
 ![Static Badge](https://img.shields.io/badge/interface-CLI-white)
 ![Static Badge](https://img.shields.io/badge/build-C++-teal)
-![Static Badge](https://img.shields.io/badge/version-beta(in_progress)-orange)
+![Static Badge](https://img.shields.io/badge/status-in_progress-orange)
 
 # CODE VAULT-Code Analyzer
   ![Code Vault](cv_readme.png)
 
-  A **command-line** static code analyser based on **C++** programming language and terminal operations. Easy to use and **get insights and anaysis reports** for code written by developers or coders.
+  A **command-line** static code analyser based on **C++** programming language and **terminal operations**. Easy to use and **get insights and anaysis reports** for code files for coders and developers.
 
 ## Documentation 📄
   The documentation for this application is available at <**weblink***> 
+  
 ## Features ⚙️⚙️
+* Command line interface
+* Easy install
+* Smooth interface
+* Data Analysis
 
 ## Tech Stack🚀
 * **C++**
 * Object-oriented programming (**OOP**)
 * Data Structures
   
-## How does it work ❓
+  
+## How it works ❓️
 
 ## Future Upgrades 🛰️
 
@@ -26,9 +32,9 @@
 
 ## Readme Add-ons ➕
 * [ ] Documentation link
-* [ ] Test cases
+* [ ] Sample test cases
 * [ ] Output Screenshots
+* [ ] Dependencies
 
----
 #### Author
 ***tecnolgd***
