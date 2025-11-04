@@ -167,7 +167,7 @@ class cliManager{ //cli managing class for display of main menu
 };
 
 // --- Execution Focus: Simplified Main Loop ---
-int main() {
+/*int main() {
     analyzer a; //object of class analyser
     cliManager cli; //object of class cliManager
     cli.runterminal(a); //passing address of class analyser object 'a' to function 'runterminal' 
@@ -175,9 +175,10 @@ int main() {
     /* Flow of the cli.runterminal(&a); ->  object a  address--> passed to runterminal()function as argument --> later derefenced to get data or value from it --> runterminal() is executed with cli i.e., ' cli.runterminal(&a) '*/
 
     //Basically, class analyser is the argument for function runterminal() which runs inside class cliManager.
-    return 0;
+    //return 0;
 
-}
+//}
+
 
 
 
