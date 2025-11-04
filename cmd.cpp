@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-//#include "main.cpp"
+//#include "main.cpp"  adding main.cpp file to access classes.
 
 int main(int argc, char* argv[]){ //to get the number of words used in the command to interpret the command given by the user.
     if(argc<2){ //error check
