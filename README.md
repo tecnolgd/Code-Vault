@@ -34,7 +34,7 @@
 * [ ] Documentation link
 * [ ] Sample test cases
 * [ ] Output Screenshots
-* [ ] Operational requirements.
+* [ ] Dependencies
 
 #### Author
 ***tecnolgd***
