@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-//#include "main.cpp"
+#include "main.cpp"
 
 int main(int argc, char* argv[]){ //to get the number of words used in the command to interpret the command given by the user.
     if(argc<2){ //error check
@@ -13,7 +13,10 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     }
     std::string command = argv[1]; //first word is the command
     analyzer a; //object of class analyser
-
+    cliManager cli; //object of class cliManager
+    cli.runterminal(a); //passing address of class analyser object 'a' to function 'runterminal' 
+    std::cout<<"Enter command:";
+    std::cin>>command;
     if(command=="populate"){
         if (argc != 3) {
             std::cout << "ERROR: 'analyze' requires a directory path." << std::endl;
@@ -21,13 +24,13 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
             return 1;
         }
         std::string path = argv[2];
-        analyzer.populate(path);
+        a.populate_data();
         
     }
     else if(command =="report"){
         std::cout << "Running full report. Analyzing current directory ('.') first." << std::endl;
-        analyzer.populate("."); // need explanation !!!
-        analyzer.report();
+        a.populate_data(); // need explanation !!!
+        a.reportData();
     }
     else if (command == "fsearch"){
         if (argc != 3) {
@@ -35,14 +38,14 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
             std::cout << "Use: ./codevault search <filename_to_find>" << std::endl;
             return 1;
         }
-        a.analyze("."); // need explanation !!!
+        //a.analyze("."); // need explanation !!!
         std::string fileName = argv[2]; // The file name to find is argv[2]
-        a.search(fileName);
+        a.searchfile();
     }
     else if (command == "fmax") {
         // Load data first, then find the largest file.
-        a.analyze(".");
-        a.maxByte();
+        
+        a.minMax();
         
     }
     else {
@@ -50,5 +53,5 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         return 1; //default statement for error check.
     }
 
-    return 0 //program success
+    return 0; //program success
 }
