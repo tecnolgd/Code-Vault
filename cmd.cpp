@@ -55,7 +55,11 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         a.minMax();
         
     }
-    else {
+    else if(command == "report"){
+        std::string path = (argc >= 3) ? argv[2] : "."; // use provided path or default to current dir
+        std::cout << "Running full report. Analyzing directory '" << path << "'.\n";
+        a.populate_data(path);
+        a.reportData(); 
         std::cout << "ERROR: Unknown command '" << command << ". Check \' help \' for available commands." << std::endl;
         return -1; //default statement for error check.
     }
