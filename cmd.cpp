@@ -1,3 +1,6 @@
+
+// requires modifications , this file is the command line interface way i.e., using one command at a time.
+
 #include <iostream>
 #include <string>
 
