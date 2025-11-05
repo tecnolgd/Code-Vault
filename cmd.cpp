@@ -8,61 +8,52 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     cliManager cli; //object of class cliManager
     
     if(argc<2){ //error check
+        std::cout<<"Starting interactive mode ...\n";
         cli.runterminal(a); //passing address of class analyser object 'a' to function 'runterminal' 
         
         return 0;
     }
-    std::cout << "------------------------------------------" << std::endl;
-        std::cout << "\tCodeVault - C++ Code Analyzer (Beta)" << std::endl;
+    std::string command = argv[1];
+    
+    //std::cout << "------------------------------------------" << std::endl;
+       // std::cout << "\tCodeVault - C++ Code Analyzer (Beta)" << std::endl;
         
-    std::string command = argv[1]; //first word is the command
-    /*if (command == "analyze") {
-        if (argc != 3) {
-            std::cout << "Usage: " << argv[0] << " analyze <directory_path>\n";
-            return 1;
-        }
-        a.populate_data(argv[2]);
-        a.reportData();
-    }*/
-    if(command=="populate"){
-        if (argc != 3) {
-            std::cout << "ERROR: 'analyze' requires a directory path." << std::endl;
-            std::cout << "Use: ./codevault analyze <path_to_directory>" << std::endl;
-            return 2;
-        }
-        std::string path = argv[2];
-        a.populate_data(argv[2]);
-        
+    if (command == "populate") {
+        std::string path = (argc >= 3) ? argv[2] : ".";
+        a.populate_data(path);
     }
-    else if(command =="report"){
-        std::cout << "Running full report. Analyzing current directory ('.') first." << std::endl;
-        a.populate_data(argv[2]); // need explanation !!!
+    else if (command == "report") {
+        // First populate data if not already done
+        if (argc >= 3) {
+            a.populate_data(argv[2]);
+        } else {
+            a.populate_data(".");
+        }
         a.reportData();
     }
-    else if (command == "fsearch"){
-        if (argc != 3) {
-            std::cout << "ERROR: 'search' requires a filename." << std::endl;
-            std::cout << "Use: ./codevault search <filename_to_find>" << std::endl;
-            return 3;
-        }
-        //a.analyze("."); // need explanation !!!
-        std::string fileName = argv[2]; // The file name to find is argv[2]
+    else if (command == "fsearch") {
+        a.populate_data(".");  // First load current directory
         a.searchfile();
     }
     else if (command == "fmax") {
-        // Load data first, then find the largest file.
-        
+        a.populate_data(".");  // First load current directory
         a.minMax();
-        
     }
-    else if(command == "report"){
-        std::string path = (argc >= 3) ? argv[2] : "."; // use provided path or default to current dir
-        std::cout << "Running full report. Analyzing directory '" << path << "'.\n";
-        a.populate_data(path);
-        a.reportData(); 
-        std::cout << "ERROR: Unknown command '" << command << ". Check \' help \' for available commands." << std::endl;
-        return -1; //default statement for error check.
+    else if (command == "help") {
+        std::cout << "\nAvailable commands:\n"
+                  << "populate [path]  - Load files from directory\n"
+                  << "report [path]    - Show analysis report\n"
+                  << "fsearch         - Search for a file\n"
+                  << "fmax            - Show largest file\n"
+                  << "help            - Show this help message\n";
+    }
+    else {
+        std::cout << "Unknown command: " << command << "\n"
+                  << "Use 'help' to see available commands\n";
+        return 1;
     }
 
-    return 0; //program success
+    return 0;
 }
+
+  
