@@ -4,19 +4,26 @@
 #include "main.cpp"
 
 int main(int argc, char* argv[]){ //to get the number of words used in the command to interpret the command given by the user.
-    if(argc<2){ //error check
-        std::cout << "------------------------------------------" << std::endl;
-        std::cout << "\tCodeVault - C++ Code Analyzer (Beta)" << std::endl;
-        std::cout << "Error: At least two words needed\n" << std::endl;
-        std::cout<<"( Note: Try using \'help\')"<<std::endl;
-        return 1;
-    }
-    std::string command = argv[1]; //first word is the command
     analyzer a; //object of class analyser
     cliManager cli; //object of class cliManager
-    cli.runterminal(a); //passing address of class analyser object 'a' to function 'runterminal' 
-    std::cout<<"Enter command:";
-    std::cin>>command;
+    
+    if(argc<2){ //error check
+        cli.runterminal(a); //passing address of class analyser object 'a' to function 'runterminal' 
+        
+        return 0;
+    }
+    std::cout << "------------------------------------------" << std::endl;
+        std::cout << "\tCodeVault - C++ Code Analyzer (Beta)" << std::endl;
+        
+    std::string command = argv[1]; //first word is the command
+    /*if (command == "analyze") {
+        if (argc != 3) {
+            std::cout << "Usage: " << argv[0] << " analyze <directory_path>\n";
+            return 1;
+        }
+        a.populate_data(argv[2]);
+        a.reportData();
+    }*/
     if(command=="populate"){
         if (argc != 3) {
             std::cout << "ERROR: 'analyze' requires a directory path." << std::endl;
@@ -24,12 +31,12 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
             return 2;
         }
         std::string path = argv[2];
-        a.populate_data();
+        a.populate_data(argv[2]);
         
     }
     else if(command =="report"){
         std::cout << "Running full report. Analyzing current directory ('.') first." << std::endl;
-        a.populate_data(); // need explanation !!!
+        a.populate_data(argv[2]); // need explanation !!!
         a.reportData();
     }
     else if (command == "fsearch"){
