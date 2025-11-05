@@ -18,7 +18,7 @@ class analyzer{
      void populate_data(const std::string& path = ".") { //needs explanation !!
             files.clear();
              std::filesystem::path p(path);
-            try {
+            try {                                   //needs explanation !!
                 if (!std::filesystem::exists(p)) {
                     std::cout << "Error: path '" << path << "' does not exist.\n";
                     return;
@@ -30,10 +30,10 @@ class analyzer{
 
                 std::cout << "Analyzing directory: " << path << "\n";
                 
-                for (const auto& entry : std::filesystem::directory_iterator(p)) { //for each loop
+                for (const auto& entry : std::filesystem::directory_iterator(p)) { //for-each loop
                     if (entry.is_regular_file()) {
                         fileStructure file;
-                        file.name = entry.path().filename().string();
+                        file.name = entry.path().filename().string(); //needs explanation
                         file.byte_size = std::filesystem::file_size(entry.path());
                         files.push_back(file);
                     }
