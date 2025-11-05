@@ -17,18 +17,36 @@ class analyzer{
   public:
      void populate_data(const std::string& path = ".") { //needs explanation !!
             files.clear();
-            std::cout << "Analyzing directory: " << path << "\n";
-            
-            for (const auto& entry : std::filesystem::directory_iterator(path)) { //for each loop
-                if (entry.is_regular_file()) {
-                    fileStructure file;
-                    file.name = entry.path().filename().string();
-                    file.byte_size = std::filesystem::file_size(entry.path());
-                    files.push_back(file);
+             std::filesystem::path p(path);
+            try {
+                if (!std::filesystem::exists(p)) {
+                    std::cout << "Error: path '" << path << "' does not exist.\n";
+                    return;
                 }
+                if (!std::filesystem::is_directory(p)) {
+                    std::cout << "Error: path '" << path << "' is not a directory.\n";
+                    return;
+                }
+
+                std::cout << "Analyzing directory: " << path << "\n";
+                
+                for (const auto& entry : std::filesystem::directory_iterator(p)) { //for each loop
+                    if (entry.is_regular_file()) {
+                        fileStructure file;
+                        file.name = entry.path().filename().string();
+                        file.byte_size = std::filesystem::file_size(entry.path());
+                        files.push_back(file);
+                    }
+                }
+                std::cout << "Found " << files.size() << " files\n";
+            } catch (const std::filesystem::filesystem_error& e) {
+                std::cout << "Filesystem error: " << e.what() << "\n";
+                return;
             }
-            std::cout << "Found " << files.size() << " files\n";
         }
+           // std::cout << "Analyzing directory: " << path << "\n";
+            
+            
    
     void reportData() { //report generation function
         if (files.empty()) { //checks if file is empty or not
@@ -151,6 +169,7 @@ class cliManager{ //cli managing class for display of main menu
         } else if (command =="populate") {
             a.populate_data();
         } else if (command =="report") {
+            
             a.reportData();
         } else if(command =="sortbyte"){
             a.sortFileOnByte(1);
