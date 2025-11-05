@@ -15,15 +15,20 @@ class analyzer{
   private: //private- to avoid unwanted file vector corruption
     std::vector <fileStructure> files; //vector to store files
   public:
-    void populate_data(){ //reading files with bytes size in each file
-        std::cout<<"--poplating vector with test data---\n";
-        files.clear();
-        // sample raw coded file names for testing
-        files.push_back({"main.cpp", 1250});//pushing file name and byte size to vector files 
-        files.push_back({"header.hpp", 450}); //basically stack operation
-        files.push_back({"utility.cpp", 2100});
-        files.push_back({"config.h", 55});
-    }
+     void populate_data(const std::string& path = ".") { //needs explanation !!
+            files.clear();
+            std::cout << "Analyzing directory: " << path << "\n";
+            
+            for (const auto& entry : std::filesystem::directory_iterator(path)) { //for each loop
+                if (entry.is_regular_file()) {
+                    fileStructure file;
+                    file.name = entry.path().filename().string();
+                    file.byte_size = std::filesystem::file_size(entry.path());
+                    files.push_back(file);
+                }
+            }
+            std::cout << "Found " << files.size() << " files\n";
+        }
    
     void reportData() { //report generation function
         if (files.empty()) { //checks if file is empty or not
