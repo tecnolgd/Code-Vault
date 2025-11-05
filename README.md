@@ -14,6 +14,7 @@
   
 ## Features ⚙️⚙️
 * Command line interface
+* Interactive mode
 * Easy install
 * Smooth interface
 * Data Analysis
@@ -22,6 +23,7 @@
 * **C++**
 * Object-oriented programming (**OOP**)
 * Data Structures
+* File Handling
   
   
 ## How it works ❓️
