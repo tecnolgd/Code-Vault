@@ -16,7 +16,7 @@ class analyzer{
     std::vector <fileStructure> files; //vector to store files
   public:
      void populate_data(const std::string& path = ".") { //needs explanation !!
-            files.clear();
+            files.clear(); //clear any garbage data
              std::filesystem::path p(path);
             try {                                   //needs explanation !!
                 if (!std::filesystem::exists(p)) {
@@ -33,7 +33,7 @@ class analyzer{
                 for (const auto& entry : std::filesystem::directory_iterator(p)) { //for-each loop
                     if (entry.is_regular_file()) {
                         fileStructure file;
-                        file.name = entry.path().filename().string(); //needs explanation
+                        file.name = entry.path().filename().string(); //needs explanation !!
                         file.byte_size = std::filesystem::file_size(entry.path());
                         files.push_back(file);
                     }
@@ -159,7 +159,7 @@ class cliManager{ //cli managing class for display of main menu
     std::cout << "\n\tWelcome to CodeVault Basic. Focus: Vector/Array Operations.\n";
     
     while (true) {
-        std::cout << "\n>>";
+        std::cout << "\n>>>";
         std::cin >> command;
         std::cin.clear();
         if ((command == "exit")||(command=="quit")) {
@@ -167,9 +167,8 @@ class cliManager{ //cli managing class for display of main menu
         } else if (command =="populate") {
             a.populate_data();
         } else if (command =="report") {
-            
             a.reportData();
-        } else if(command =="sortbyte"){
+        } else if(command =="fsortbyte"){
             a.sortFileOnByte(1);
         } else if(command == "maxbyte"){//display the max byte sized file.
             a.minMax();
