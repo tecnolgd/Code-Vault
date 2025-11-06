@@ -55,7 +55,7 @@ class analyzer{
         
         // CORE DSA: Iterating over the entire vector (array).
         for (int i=0; i<files.size();i++) { // for loop
-            std::cout << " - File: " << files[i].name << " (" << files[i].byte_size << " bytes)\n";
+            std::cout << " - File "<<i+1<<": " << files[i].name << " (" << files[i].byte_size << " bytes)\n";
             totalSizeBytes += files[i].byte_size; //total bytes size
         }
         std::cout << "\nTotal Files Stored: " << files.size() << "\n"; //size() function
@@ -81,7 +81,7 @@ class analyzer{
         if(x){ //this would work if x is 1 ,i.e when the sortbyte function is called
             std::cout<<"Sorted files based on bytes :\n";
             for(int i=0;i<files.size();i++){
-                std::cout << " - File: " << files[i].name << " (" << files[i].byte_size << " bytes)\n";
+                std::cout << " - File "<<i+1<<": "<< files[i].name << " (" << files[i].byte_size << " bytes)\n";
             }
         }
         int size= files.size();
