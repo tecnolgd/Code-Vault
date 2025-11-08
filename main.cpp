@@ -164,10 +164,11 @@ class cliManager{ //cli managing class for display of main menu
         std::cin.clear();
         if ((command == "exit")||(command=="quit")) {
             break;
-        } else if (command =="populate") {
+        } else if ((command =="populate") || (command=="report")) {
             a.populate_data();
-        } else if (command =="report") {
-            a.reportData();
+            if(command=="report"){
+                 a.reportData();
+            }
         } else if(command =="fsortbyte"){
             a.sortFileOnByte(1);
         } else if(command == "maxbyte"){//display the max byte sized file.
