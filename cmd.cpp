@@ -23,7 +23,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         return 0;
     }
     std::string command = argv[1];
-   
+
     //std::cout << "------------------------------------------" << std::endl;
        // std::cout << "\tCodeVault - C++ Code Analyzer (Beta)" << std::endl;
         
@@ -41,28 +41,25 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         }
         return 0;
     }
-        if (command == "flcount") {
-        
+
+    // Commands that take a filename as 2nd arg (or prompt if missing)
+    if (command == "flcount") {
+        if (argc >= 3) {
+            a.lineCount(argv[2]);
+        } else {
             // prompt interactive-style if no filename provided
             a.lineCount();
         }
-        return 0;
-    
-    
-        // Commands that take a filename as 2nd arg (or prompt if missing)
-    if (command == "flcount") {
-        
-            // prompt interactive-style if no filename provided
-            a.lineCount();
-        
         return 0;
     }
 
     if (command == "fsearch") {
         a.populate_data("."); // load files from current dir
-        
+        if (argc >= 3) {
+            a.searchfile(argv[2]);
+        } else {
             a.searchfile(); // interactive prompt
-        
+        }
         return 0;
     }
 
@@ -78,10 +75,9 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         return 0;
     }
 
-            std::cout << "Unknown command: " << command << "\n"
-                      << "Use 'help' to see available commands\n";
-            return 1;
-        }
+    std::cout << "Unknown command: " << command << "\nUse 'help' to see available commands\n";
+    return 1;
+}
     
     
 
