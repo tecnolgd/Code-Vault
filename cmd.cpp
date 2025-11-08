@@ -23,17 +23,17 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         return 0;
     }
     std::string command = argv[1];
-    std::string path= (argc >= 3) ? argv[2] : ".";
+   
     //std::cout << "------------------------------------------" << std::endl;
        // std::cout << "\tCodeVault - C++ Code Analyzer (Beta)" << std::endl;
         
-    if ((command == "populate") || (command == "report")) {
-        
+    if ((command == "populate") || (command=="report")) {
+        std::string path = (argc >= 3) ? argv[2] : ".";
         a.populate_data(path);
         if(command=="report"){
             a.reportData();
         }
-    }             // First populate data if not already done
+                // First populate data if not already done
     
     //else {
         //if (argc < 2) {
@@ -42,16 +42,16 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         //}
         else if (command == "flcount") {
             
-            a.populate_data(".");
+           // a.populate_data(".");
             a.lineCount();
         }
     
         else if (command == "maxbyte") {
-            a.populate_data(".");  // First load current directory
+            //a.populate_data(".");  // First load current directory
             a.minMax();
         }
         else if(command=="fsearch"){
-            a.populate_data(".");
+            //a.populate_data(".");
             a.searchfile();
         }
         else if (command == "help") {
@@ -62,6 +62,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
                     << "fmax            - Show largest file\n"
                     << "help            - Show this help message\n";
         }
+    }
         else {
             std::cout << "Unknown command: " << command << "\n"
                       << "Use 'help' to see available commands\n";
