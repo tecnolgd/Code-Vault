@@ -6,10 +6,16 @@
 
 #include "main.cpp"
 
+void printBanner() {
+    std::cout << "----------------------------------------\n"
+              << "    CodeVault C++ Analyzer Beta v1.0     \n"
+              << "----------------------------------------\n";
+}
 int main(int argc, char* argv[]){ //to get the number of words used in the command to interpret the command given by the user.
     analyzer a; //object of class analyser
     cliManager cli; //object of class cliManager
     
+    printBanner();
     if(argc<2){ //error check
         std::cout<<"Starting interactive mode ...\n";
         cli.runterminal(a); //passing address of class analyser object 'a' to function 'runterminal' 
@@ -21,22 +27,22 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     //std::cout << "------------------------------------------" << std::endl;
        // std::cout << "\tCodeVault - C++ Code Analyzer (Beta)" << std::endl;
         
-    if (command == "populate") {
+    if ((command == "populate") || (command == "report")) {
         std::string path = (argc >= 3) ? argv[2] : ".";
         a.populate_data(path);
-    }
-    else if (command == "report") {
-        // First populate data if not already done
-        if (argc >= 3) {
-            a.populate_data(argv[2]);
-        } else {
-            a.populate_data(".");
+        if(command=="report"){
+            a.reportData();
         }
-        a.reportData();
-    }
-    else if (command == "fsearch") {
-        a.populate_data(".");  // First load current directory
-        a.searchfile();
+    }             // First populate data if not already done
+    
+    else if (command == "analyze") {
+            if (argc < 3) {
+                std::cout << "Usage: analyzer analyze <filename>\n";
+                return 1;
+            }
+            a.populate_data(".");
+            a.reportData();
+            a.lineCount();
     }
     else if (command == "fmax") {
         a.populate_data(".");  // First load current directory
