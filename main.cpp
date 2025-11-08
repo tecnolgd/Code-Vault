@@ -92,15 +92,11 @@ class analyzer{
         std::cout<<"Max byte containing file: "<<x;
     }
 
-    void searchfile(){ //to search the file vector based on the file name.
+    void searchfile(const std::string& fname){ //to search the file vector based on the file name.
         int x= sortFileOnByte(0); //to sort the vector before binary search.
         int size=files.size();
         int key; //key - for condition verification
         int low=0,mid,high=size-1;
-        std::string fname;
-        std::cout<<"Enter name of the file to be searched :";
-        std::cin>>fname;
-    
         while(low<=high){   //binary search algorithm
             mid=(low+high)/2;
             if(files[mid].name == fname){
@@ -119,11 +115,15 @@ class analyzer{
             std::cout<<"File not found. Try with a correct name"<<std::endl;
         }
     }
+    void searchfile() { // interactive file search wrapper
+        std::string fname;
+        std::cout << "Enter name of the file to be searched :";
+        std::cin >> fname;
+        searchfile(fname);
+    }
     
-    void lineCount(){   //function to count lines of code in a desired file (any file in the system)
-        std::string filepath; //string to store filename
-        std::cout<<"enter filename ";
-        std::cin>>filepath;
+    void lineCount(const std::string& filepath){   //function to count lines of code in a desired file (any file in the system)
+        
         std::ifstream file(filepath); //open file for reading
         if(! file.is_open()){ //to check whether the file exists
             std::cout<<"Error: Could not open file "<<filepath<<" !"<<std::endl;
@@ -145,6 +145,13 @@ class analyzer{
         else {
             std::cout << "Could not complete analysis. Check the path and file permissions." << std::endl;
         }
+    }
+
+    void lineCount() { // interactive file line count wrapper
+        std::string filepath;
+        std::cout << "enter filename ";
+        std::cin >> filepath;
+        lineCount(filepath);
     }
              
      // Future Expansion Point: This is where advanced features will go.
