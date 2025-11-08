@@ -27,43 +27,57 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     //std::cout << "------------------------------------------" << std::endl;
        // std::cout << "\tCodeVault - C++ Code Analyzer (Beta)" << std::endl;
         
-    if ((command == "populate") || (command=="report")) {
+    // Commands that take a directory/path as 2nd arg
+    if (command == "populate" || command == "report" || command == "fsortbyte" || command == "maxbyte") {
         std::string path = (argc >= 3) ? argv[2] : ".";
         a.populate_data(path);
-        if(command=="report"){
+
+        if (command == "report") {
             a.reportData();
-        }
-                // First populate data if not already done
-    
-    //else {
-        //if (argc < 2) {
-                //std::cout << "Usage: codevault <command> <directory name>\n";
-                //return 1;
-        //}
-        else if (command == "flcount") {
-            
-           // a.populate_data(".");
-            a.lineCount();
-        }
-    
-        else if (command == "maxbyte") {
-            //a.populate_data(".");  // First load current directory
+        } else if (command == "fsortbyte") {
+            a.sortFileOnByte(1);
+        } else if (command == "maxbyte") {
             a.minMax();
         }
-        else if(command=="fsearch"){
-            //a.populate_data(".");
-            a.searchfile();
-        }
-        else if (command == "help") {
-            std::cout << "\nAvailable commands:\n"
-                    << "populate [path]  - Load files from directory\n"
-                    << "report [path]    - Show analysis report\n"
-                    << "fsearch         - Search for a file\n"
-                    << "fmax            - Show largest file\n"
-                    << "help            - Show this help message\n";
-        }
+        return 0;
     }
-        else {
+        if (command == "flcount") {
+        
+            // prompt interactive-style if no filename provided
+            a.lineCount();
+        }
+        return 0;
+    
+    
+        // Commands that take a filename as 2nd arg (or prompt if missing)
+    if (command == "flcount") {
+        
+            // prompt interactive-style if no filename provided
+            a.lineCount();
+        
+        return 0;
+    }
+
+    if (command == "fsearch") {
+        a.populate_data("."); // load files from current dir
+        
+            a.searchfile(); // interactive prompt
+        
+        return 0;
+    }
+
+    if (command == "help") {
+        std::cout << "\nAvailable commands:\n"
+                  << "populate [path]  - Load files from directory\n"
+                  << "report [path]    - Show analysis report\n"
+                  << "fsortbyte [path] - Sort files by size and display\n"
+                  << "maxbyte [path]   - Show largest file\n"
+                  << "fsearch [name]   - Search for a file (or prompt)\n"
+                  << "flcount [file]   - Count lines in a file (or prompt)\n"
+                  << "help             - Show this help message\n";
+        return 0;
+    }
+
             std::cout << "Unknown command: " << command << "\n"
                       << "Use 'help' to see available commands\n";
             return 1;
@@ -71,7 +85,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     
     
 
-    return 0;
-}
+    
+
 
   
