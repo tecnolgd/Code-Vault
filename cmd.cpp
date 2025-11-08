@@ -35,23 +35,23 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         }
     }             // First populate data if not already done
     
-    else {
-        if (argc < 2) {
-                std::cout << "Usage: codevault <command> <directory name>\n";
-                return 1;
-        }
+    //else {
+        //if (argc < 2) {
+                //std::cout << "Usage: codevault <command> <directory name>\n";
+                //return 1;
+        //}
         else if (command == "flcount") {
             
-            a.populate_data(path);
+            a.populate_data(".");
             a.lineCount();
         }
     
         else if (command == "maxbyte") {
-            a.populate_data(path);  // First load current directory
+            a.populate_data(".");  // First load current directory
             a.minMax();
         }
         else if(command=="fsearch"){
-            a.populate_data(path);
+            a.populate_data(".");
             a.searchfile();
         }
         else if (command == "help") {
@@ -67,7 +67,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
                       << "Use 'help' to see available commands\n";
             return 1;
         }
-    }
+    
     
 
     return 0;
