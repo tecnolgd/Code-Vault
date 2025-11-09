@@ -30,7 +30,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     // Commands that take a directory/path as 2nd arg
     if (command == "populate" || command == "report" || command == "fsortbyte" || command == "maxbyte") {
         std::string path = (argc >= 3) ? argv[2] : ".";
-        a.populate_data(path);
+        a.populate_data();
 
         if (command == "report") {
             a.reportData();
@@ -43,7 +43,8 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     }
 
     // Commands that take a filename as 2nd arg (or prompt if missing)
-    if (command == "flcount") {
+    else {
+        if (command == "flcount") {
         if (argc >= 3) {
             a.lineCount(argv[2]);
         } else {
@@ -74,6 +75,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
                   << "help             - Show this help message\n";
         return 0;
     }
+}
 
     std::cout << "Unknown command: " << command << "\nUse 'help' to see available commands\n";
     return 1;
