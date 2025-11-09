@@ -15,12 +15,9 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     cliManager cli; //object of class cliManager
     
     printBanner();
-    
-    
     if(argc<2){ //error check
         std::cout<<"Starting interactive mode ...\n";
         cli.runterminal(a); //passing address of class analyser object 'a' to function 'runterminal' 
-        
         return 0;
     }
     std::string command = argv[1];
@@ -30,7 +27,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         std::string path = (argc >= 3) ? argv[2] : ".";
         a.populate_data(path);
         std::cout<<"-----------------------\n";
-        std::cout << "Executable argv[0]: " << (argc>0 ? argv[0] : "<none>") << "\n";
+        std::cout << "Executable argv[0]: " << (argc>0 ? argv[0] : "<none>") << "\n"; //executable used e.g., analyzer <command> / here "analyzer"= execuatble
     std::cout << "Current working directory: " << std::filesystem::current_path() << "\n";
 
         if (command == "report") {
@@ -53,7 +50,6 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         }
         return 0;
     }
-
     else if (command == "fsearch") {
         a.populate_data("."); // load files from current dir
         if (argc >= 3) {
@@ -66,7 +62,6 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     else if(command == "tcred"){//credits and author details.
             printf("\n\tCredits :\nAuthor: tecnolgd\nDocumentation at https://c.com\n");
     }
-
     else if (command == "help") {
         std::cout << "\nAvailable commands:\n"
                   << "populate [path]       - Load files from directory\n"
@@ -79,7 +74,6 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
                   << "help                  - Show this help message\n";
         return 0;
     }
-
     else{
         std::cout << "Unknown command: " << command << "\nUse 'help' to see available commands\n";
         return 1;
