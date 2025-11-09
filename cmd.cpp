@@ -63,6 +63,9 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         }
         return 0;
     }
+    else if(command == "tcred"){//credits and author details.
+            printf("\n\tCredits :\nAuthor: tecnolgd\nDocumentation at https://c.com\n");
+    }
 
     else if (command == "help") {
         std::cout << "\nAvailable commands:\n"
