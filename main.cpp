@@ -46,7 +46,9 @@ class analyzer{
         }
            // std::cout << "Analyzing directory: " << path << "\n";
             
-    void reportData() { //report generation function
+    void reportData(
+
+    ) { //report generation function
         if (files.empty()) { //checks if file is empty or not
             std::cout << "Vector is empty. Run 'populate' first.\n";
             return;
