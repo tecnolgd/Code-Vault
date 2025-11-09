@@ -69,13 +69,14 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
 
     else if (command == "help") {
         std::cout << "\nAvailable commands:\n"
-                  << "populate [path]  - Load files from directory\n"
-                  << "report [path]    - Show analysis report\n"
-                  << "fsortbyte [path] - Sort files by size and display\n"
-                  << "maxbyte [path]   - Show largest file\n"
-                  << "fsearch [name]   - Search for a file (or prompt)\n"
-                  << "flcount [file]   - Count lines in a file (or prompt)\n"
-                  << "help             - Show this help message\n";
+                  << "populate [path]       - Load files from directory\n"
+                  << "report [path]         - Show analysis report\n"
+                  << "fsortbyte [path]      - Sort files by size and display\n"
+                  << "maxbyte [path]        - Show largest file\n"
+                  << "fsearch [file name]   - Search for a file (or prompt)\n"
+                  << "flcount [file name]   - Count lines in a file (or prompt)\n"
+                  << "tcred                 - Credits and documentation\n"
+                  << "help                  - Show this help message\n";
         return 0;
     }
 
