@@ -15,7 +15,7 @@ class analyzer{
   private: //private- to avoid unwanted file vector corruption
     std::vector <fileStructure> files; //vector to store files
   public:
-     void populate_data(const std::string& path = ".") { //needs explanation !!
+     void populate_data( const std::string& path=".") { //needs explanation !!
             files.clear(); //clear any garbage data
              std::filesystem::path p(path);
             try {                                   //needs explanation !!
