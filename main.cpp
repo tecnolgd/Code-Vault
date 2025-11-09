@@ -5,6 +5,7 @@
 #include <fstream>
 #include <filesystem>
 
+
 struct fileStructure {
   std::string name;
   long long byte_size; //for large number storage (since files have a lot of bytes)
@@ -44,7 +45,7 @@ class analyzer{
                 return;
             }
         }
-           // std::cout << "Analyzing directory: " << path << "\n";
+           //std::cout << "Analyzing directory: " << path << "\n";
             
     void reportData(
 
@@ -55,8 +56,8 @@ class analyzer{
         }                                                          std::cout << "\n--- CodeVault Vector Report (Summation) ---\n"; //report summary 
         long long totalSizeBytes = 0;
         
-        // CORE DSA: Iterating over the entire vector (array).
-        for (int i=0; i<files.size();i++) { // for loop
+        //CORE DSA: Iterating over the entire vector (array).
+        for (int i=0; i<files.size();i++) { //for loop
             std::cout << " - File "<<i+1<<": " << files[i].name << " (" << files[i].byte_size << " bytes)\n";
             totalSizeBytes += files[i].byte_size; //total bytes size
         }
@@ -117,7 +118,7 @@ class analyzer{
             std::cout<<"File not found. Try with a correct name"<<std::endl;
         }
     }
-    void searchfile() { // interactive file search wrapper
+    void searchfile() { //interactive file search wrapper
         std::string fname;
         std::cout << "Enter name of the file to be searched :";
         std::cin >> fname;
@@ -138,7 +139,7 @@ class analyzer{
             flCount++; //increment the lCount when new line is encountered.
         }
         file.close();
-        if (flCount > 0) { //tocheck    whether file is empty and block any other possible errors.
+        if (flCount > 0) { //to check whether file is empty and block any other possible errors.
             std::cout<<std::endl;
             std::cout << "Analysis Complete." << std::endl;
             std::cout << "File: " <<filepath<< std::endl;
@@ -149,18 +150,18 @@ class analyzer{
         }
     }
 
-    void lineCount() { // interactive file line count wrapper
+    void lineCount() { //interactive file line count wrapper
         std::string filepath;
         std::cout << "enter filename ";
         std::cin >> filepath;
         lineCount(filepath);
     }
              
-     // Future Expansion Point: This is where advanced features will go.
-    // Example: void searchFile(const std::string& name); // Linear Search!
+     //Future Expansion Point: This is where advanced features will go.
+    //Example: void searchFile(const std::string& name); // Linear Search!
 
 };
-// cliManager class
+//cliManager class
 class cliManager{ //cli managing class for display of main menu
     public:
     void runterminal(analyzer &a){ //function to run the terminal as a whole 
@@ -182,13 +183,13 @@ class cliManager{ //cli managing class for display of main menu
             a.sortFileOnByte(1);
         } else if(command == "maxbyte"){//display the max byte sized file.
             a.minMax();
-        } else if(command == "fsearch"){// search for a file and display filename and location.
+        } else if(command == "fsearch"){//search for a file and display filename and location.
             a.searchfile();
         }else if(command == "flcount"){//count number of lines in any file in the system.
             a.lineCount();
-        }else if(command == "tcred"){// credits and author details.
+        }else if(command == "tcred"){//credits and author details.
             printf("\n\tCredits :\nAuthor: tecnolgd\nDocumentation at https://c.com\n");
-        }else if (command == "help") {// help option 
+        }else if (command == "help") {//help option 
             std::cout << "\n\t-- Available commands --\n populate  - reading /fetching file names and byte size\n fsortbyte - display the files sorted based on byte size\n report    - summarize key findings regarding file data\n fsearch   - to sreach for a file based on its name\n maxbyte   - gives the max byte file\n exit/quit - terminate from the application\n flcount   - display number of lines of code in a desired file\n tcred     - tool credits and doc details\n";
         } else {
             std::cout << "Unknown command. Try using 'help'\n";
@@ -197,7 +198,7 @@ class cliManager{ //cli managing class for display of main menu
 }
 };
 
-// --- Execution Focus: Simplified Main Loop ---
+//--- Execution Focus: Simplified Main Loop ---
 /*int main() {
     analyzer a; //object of class analyser
     cliManager cli; //object of class cliManager
