@@ -8,7 +8,7 @@
 
 void printBanner() {
     std::cout << "----------------------------------------\n"
-              << "    CodeVault C++ Analyzer Beta v1.0     \n"
+              << "    C++ Analyzer Beta v1.0     \n"
               << "----------------------------------------\n";
 }
 int main(int argc, char* argv[]){ //to get the number of words used in the command to interpret the command given by the user.
@@ -16,6 +16,9 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     cliManager cli; //object of class cliManager
     
     printBanner();
+    std::cout << "Executable argv[0]: " << (argc>0 ? argv[0] : "<none>") << "\n";
+    std::cout << "Current working directory: " << std::filesystem::current_path() << "\n";
+    
     if(argc<2){ //error check
         std::cout<<"Starting interactive mode ...\n";
         cli.runterminal(a); //passing address of class analyser object 'a' to function 'runterminal' 
@@ -23,14 +26,11 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         return 0;
     }
     std::string command = argv[1];
-
-    //std::cout << "------------------------------------------" << std::endl;
-       // std::cout << "\tCodeVault - C++ Code Analyzer (Beta)" << std::endl;
         
-    // Commands that take a directory/path as 2nd arg
+//Commands that take a directory/path as 2nd arg
     if (command == "populate" || command == "report" || command == "fsortbyte" || command == "maxbyte") {
         std::string path = (argc >= 3) ? argv[2] : ".";
-        a.populate_data();
+        a.populate_data(path);
 
         if (command == "report") {
             a.reportData();
@@ -42,9 +42,8 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         return 0;
     }
 
-    // Commands that take a filename as 2nd arg (or prompt if missing)
-    else {
-        if (command == "flcount") {
+// Commands that take a filename as 2nd arg (or prompt if missing)
+    else if (command == "flcount") {
         if (argc >= 3) {
             a.lineCount(argv[2]);
         } else {
@@ -54,7 +53,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         return 0;
     }
 
-    if (command == "fsearch") {
+    else if (command == "fsearch") {
         a.populate_data("."); // load files from current dir
         if (argc >= 3) {
             a.searchfile(argv[2]);
@@ -64,7 +63,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         return 0;
     }
 
-    if (command == "help") {
+    else if (command == "help") {
         std::cout << "\nAvailable commands:\n"
                   << "populate [path]  - Load files from directory\n"
                   << "report [path]    - Show analysis report\n"
@@ -75,10 +74,12 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
                   << "help             - Show this help message\n";
         return 0;
     }
-}
 
-    std::cout << "Unknown command: " << command << "\nUse 'help' to see available commands\n";
-    return 1;
+    else{
+        std::cout << "Unknown command: " << command << "\nUse 'help' to see available commands\n";
+        return 1;
+    }
+    
 }
     
     
