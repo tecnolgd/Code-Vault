@@ -112,7 +112,7 @@ class analyzer{
                 high = mid-1;
         }
         if(key==1){
-            std::cout<<"File found at location "<<mid<<" with "<<files[mid].byte_size<<" bytes"<<std::endl;
+            std::cout<<"File found at location "<<mid<<" with "<<files[mid+1].byte_size<<" bytes"<<std::endl;
         }
         else{
             std::cout<<"File not found. Try with a correct name"<<std::endl;
