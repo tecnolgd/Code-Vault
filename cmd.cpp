@@ -5,7 +5,6 @@
 #include <string>
 
 #include "main.cpp"
-
 void printBanner() {
     std::cout << "----------------------------------------\n"
               << "    C++ Analyzer Beta v1.0     \n"
@@ -16,8 +15,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     cliManager cli; //object of class cliManager
     
     printBanner();
-    std::cout << "Executable argv[0]: " << (argc>0 ? argv[0] : "<none>") << "\n";
-    std::cout << "Current working directory: " << std::filesystem::current_path() << "\n";
+    
     
     if(argc<2){ //error check
         std::cout<<"Starting interactive mode ...\n";
@@ -31,6 +29,9 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     if (command == "populate" || command == "report" || command == "fsortbyte" || command == "maxbyte") {
         std::string path = (argc >= 3) ? argv[2] : ".";
         a.populate_data(path);
+        std::cout<<"-----------------------\n";
+        std::cout << "Executable argv[0]: " << (argc>0 ? argv[0] : "<none>") << "\n";
+    std::cout << "Current working directory: " << std::filesystem::current_path() << "\n";
 
         if (command == "report") {
             a.reportData();
