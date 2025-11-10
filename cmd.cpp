@@ -1,4 +1,4 @@
-// working correctly ,error checks required for beta release , this file is the command line interface way i.e., using one command at a time.
+//working correctly ,error checks required for beta release . this file is the command line interface way i.e., using one command at a time.
 #include <iostream>
 #include <string>
 #include "main.cpp" //to inclde main.cpp functionalities as class analyzer.
@@ -20,7 +20,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     std::string command = argv[1];
         
 //Commands that take a directory/path as 2nd arg
-    if (command == "populate" || command == "report" || command == "fsortbyte" || command == "maxbyte") {
+    if (command == "populate" || command == "report" || command == "fsortbyte" || command == "fmaxbyte") {
         std::string path = (argc >= 3) ? argv[2] : ".";
         a.populate_data(path);
         std::cout<<"-----------------------\n";
@@ -56,7 +56,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         }
         return 0;
     }
-    else if(command == "tcred"){//credits and author details.
+    else if(command == "creds"){//credits and author details.
             printf("\n\tCredits :\nAuthor: tecnolgd\nDocumentation at https://c.com\n");
     }
     else if (command == "help") {
@@ -64,10 +64,10 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
                   << "populate [path]       - Load files from directory\n"
                   << "report [path]         - Show analysis report\n"
                   << "fsortbyte [path]      - Sort files by size and display\n"
-                  << "maxbyte [path]        - Show largest file\n"
+                  << "fmaxbyte [path]        - Show largest file\n"
                   << "fsearch [file name]   - Search for a file (or prompt)\n"
                   << "flcount [file name]   - Count lines in a file (or prompt)\n"
-                  << "tcred                 - Credits and documentation\n"
+                  << "creds                 - Credits and documentation\n"
                   << "help                  - Show this help message\n";
         return 0;
     }
