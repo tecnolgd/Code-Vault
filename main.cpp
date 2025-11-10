@@ -1,4 +1,6 @@
 // interactive mode logic ( menu based kind of with ">>" arrows for each command )
+
+//#include "head.hpp"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -12,9 +14,10 @@ struct fileStructure {
 
 class analyzer{ //analyzer class
   private: //private- to avoid unwanted file vector corruption
-    std::vector <fileStructure> files; //vector to store files
+  std::vector <fileStructure> files; //vector to store files
+
   public:
-     void populate_data( const std::string& path=".") { //needs explanation !!
+  void populate_data( const std::string& path=".") { //needs explanation !!
             files.clear(); //clear any garbage data
              std::filesystem::path p(path);
             try {                                   //needs explanation !!
