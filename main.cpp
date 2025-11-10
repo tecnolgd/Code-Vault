@@ -2,12 +2,12 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <fstream>
-#include <filesystem>
+#include <fstream> //file I/O
+#include <filesystem> //filesystem operations
 
 struct fileStructure {
   std::string name;
-  long long byte_size; //for large number storage (since files have a lot of bytes)
+  long long byte_size; //for large byte-count (since files have a lot of bytes)
 };
 
 class analyzer{ //analyzer class
@@ -33,7 +33,7 @@ class analyzer{ //analyzer class
                         fileStructure file;
                         file.name = entry.path().filename().string(); //needs explanation !!
                         file.byte_size = std::filesystem::file_size(entry.path());
-                        files.push_back(file);
+                        files.push_back(file); //stack push operation
                     }
                 }
                 std::cout << "Found " << files.size() << " files\n";
@@ -47,7 +47,7 @@ void reportData() { //report generation function
         if (files.empty()) { //checks if file is empty or not
             std::cout << "Vector is empty. Run 'populate' first.\n";
             return;
-        }                                                          std::cout << "\n--- CodeVault Vector Report (Summation) ---\n"; //report summary 
+        }                                                          std::cout << "\n--- CodeVault Directory Report (Summation) ---\n"; //report summary 
         long long totalSizeBytes = 0;
         
         //CORE DSA: Iterating over the entire vector (array).
@@ -75,7 +75,7 @@ void reportData() { //report generation function
             }
         }
 
-        if(x){ //this would work if x is 1 ,i.e when the sortbyte function is called
+        if(x){ //this would work if x is 1 ,i.e when the sortbyte() function is called
             std::cout<<"Sorted files based on bytes :\n";
             for(int i=0;i<files.size();i++){
                 std::cout << " - File "<<i+1<<": "<< files[i].name << " (" << files[i].byte_size << " bytes)\n";
@@ -86,13 +86,13 @@ void reportData() { //report generation function
     }
     void minMax(){
         int x= sortFileOnByte(0);//this makes sure the sortbyte bool x has value zeo so as to skip the sorted files display
-        std::cout<<"Max byte containing file: "<<x;
+        std::cout<<"Largest file: "<<x; //based on number of bytes.
     }
 
     void searchfile(const std::string& fname){ //to search the file vector based on the file name.
         int x= sortFileOnByte(0); //to sort the vector before binary search.
         int size=files.size();
-        int key; //key - for condition verification
+        int key; //key - for search condition verification
         int low=0,mid,high=size-1;
         while(low<=high){   //binary search algorithm
             mid=(low+high)/2;
@@ -151,7 +151,7 @@ void reportData() { //report generation function
     }
              
      //Future Expansion Point: This is where advanced features will go.
-    //Example: void searchFile(const std::string& name); // Linear Search!
+    
 
 };
 //cliManager class
@@ -203,12 +203,3 @@ class cliManager{ //cli managing class for display of main menu
     //return 0;
 
 //}
-
-
-
-
-
-
-
-
-
