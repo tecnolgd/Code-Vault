@@ -145,7 +145,7 @@ void reportData() { //report generation function
 
     void lineCount() { //interactive file line count wrapper
         std::string filepath;
-        std::cout << "enter filename ";
+        std::cout << "Enter filename: ";
         std::cin >> filepath;
         lineCount(filepath);
     }
@@ -174,16 +174,16 @@ class cliManager{ //cli managing class for display of main menu
             }
         } else if(command =="fsortbyte"){
             a.sortFileOnByte(1);
-        } else if(command == "maxbyte"){//display the max byte sized file.
+        } else if(command == "fmaxbyte"){//display the max byte sized file.
             a.minMax();
         } else if(command == "fsearch"){//search for a file and display filename and location.
             a.searchfile();
         }else if(command == "flcount"){//count number of lines in any file in the system.
             a.lineCount();
-        }else if(command == "tcred"){//credits and author details.
+        }else if(command == "creds"){//credits and author details.
             printf("\n\tCredits :\nAuthor: tecnolgd\nDocumentation at https://c.com\n");
         }else if (command == "help") {//help option 
-            std::cout << "\n\t-- Available commands --\n populate  - reading /fetching file names and byte size\n fsortbyte - display the files sorted based on byte size\n report    - summarize key findings regarding file data\n fsearch   - to sreach for a file based on its name\n maxbyte   - gives the max byte file\n exit/quit - terminate from the application\n flcount   - display number of lines of code in a desired file\n tcred     - tool credits and doc details\n";
+            std::cout << "\n\t-- Available commands --\n populate  - reading /fetching file names and byte size\n fsortbyte - display the files sorted based on byte size\n report    - summarize key findings regarding file data\n fsearch   - to sreach for a file based on its name\n fmaxbyte   - gives the max byte file\n exit/quit - terminate from the application\n flcount   - display number of lines of code in a desired file\n creds     - tool credits and doc details\n";
         } else {
             std::cout << "Unknown command. Try using 'help'\n";
         }
