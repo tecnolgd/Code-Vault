@@ -3,9 +3,8 @@
 
 #include <iostream>
 #include <string>
-
-#include "main.cpp"
-void printBanner() {
+#include "main.cpp" //to inclde main.cpp functionalities as class analyzer.
+void printBanner() { //tool header
     std::cout << "----------------------------------------\n"
               << "    C++ Analyzer Beta v1.0     \n"
               << "----------------------------------------\n";
@@ -13,8 +12,8 @@ void printBanner() {
 int main(int argc, char* argv[]){ //to get the number of words used in the command to interpret the command given by the user.
     analyzer a; //object of class analyser
     cliManager cli; //object of class cliManager
-    
     printBanner();
+    
     if(argc<2){ //error check
         std::cout<<"Starting interactive mode ...\n";
         cli.runterminal(a); //passing address of class analyser object 'a' to function 'runterminal' 
@@ -28,7 +27,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         a.populate_data(path);
         std::cout<<"-----------------------\n";
         std::cout << "Executable argv[0]: " << (argc>0 ? argv[0] : "<none>") << "\n"; //executable used e.g., analyzer <command> / here "analyzer"= execuatble
-    std::cout << "Current working directory: " << std::filesystem::current_path() << "\n";
+        std::cout << "Current working directory: " << std::filesystem::current_path() << "\n";
 
         if (command == "report") {
             a.reportData();
@@ -78,12 +77,4 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         std::cout << "Unknown command: " << command << "\nUse 'help' to see available commands\n";
         return 1;
     }
-    
-}
-    
-    
-
-    
-
-
-  
+}  
