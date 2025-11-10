@@ -5,7 +5,6 @@
 #include <fstream>
 #include <filesystem>
 
-
 struct fileStructure {
   std::string name;
   long long byte_size; //for large number storage (since files have a lot of bytes)
@@ -46,10 +45,7 @@ class analyzer{
             }
         }
            //std::cout << "Analyzing directory: " << path << "\n";
-            
-    void reportData(
-
-    ) { //report generation function
+void reportData() { //report generation function
         if (files.empty()) { //checks if file is empty or not
             std::cout << "Vector is empty. Run 'populate' first.\n";
             return;
@@ -210,6 +206,7 @@ class cliManager{ //cli managing class for display of main menu
     //return 0;
 
 //}
+
 
 
 
