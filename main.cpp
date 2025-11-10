@@ -10,8 +10,7 @@ struct fileStructure {
   long long byte_size; //for large number storage (since files have a lot of bytes)
 };
 
-//analyzer class
-class analyzer{
+class analyzer{ //analyzer class
   private: //private- to avoid unwanted file vector corruption
     std::vector <fileStructure> files; //vector to store files
   public:
@@ -27,10 +26,9 @@ class analyzer{
                     std::cout << "Error: path '" << path << "' is not a directory.\n";
                     return;
                 }
-
-                std::cout << "Analyzing directory: " << path << "\n";
+              std::cout << "Analyzing directory: " << path << "\n";
                 
-                for (const auto& entry : std::filesystem::directory_iterator(p)) { //for-each loop
+              for (const auto& entry : std::filesystem::directory_iterator(p)) { //for-each loop
                     if (entry.is_regular_file()) {
                         fileStructure file;
                         file.name = entry.path().filename().string(); //needs explanation !!
@@ -122,7 +120,6 @@ void reportData() { //report generation function
     }
     
     void lineCount(const std::string& filepath){   //function to count lines of code in a desired file (any file in the system)
-        
         std::ifstream file(filepath); //open file for reading
         if(! file.is_open()){ //to check whether the file exists
             std::cout<<"Error: Could not open file "<<filepath<<" !"<<std::endl;
@@ -206,6 +203,7 @@ class cliManager{ //cli managing class for display of main menu
     //return 0;
 
 //}
+
 
 
 
