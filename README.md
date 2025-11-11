@@ -29,6 +29,10 @@
 ## How it works ❓️
 
 ## Future Upgrades 🛰️
+- [ ] New analysis features
+- [ ] Improved time complexity
+- [ ] User-friendly Commands
+- [ ] Improved documentation
 
 ## How to run ?🔛
 
