@@ -61,7 +61,7 @@ void reportData() { //report generation function
         std::cout << "\nTotal Files Stored: " << files.size() << "\n"; //size() function
         std::cout << "Total Codebase Size: " << totalSizeBytes << " bytes\n";
     }
-    auto sortFileOnByte(bool x){
+    auto sortFileOnByte(bool x){ //bubble sort algorithm
         //function to sort files based on byte size
         for( int i=0;i<files.size()-1;i++){
              for(int j=0;j<files.size()-1-i;j++){
