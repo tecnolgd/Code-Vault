@@ -41,6 +41,13 @@
 - [ ] Improved documentation
 
 ## How to run ?🔛
+1. Clone the repository :
+```bash
+<repo clone link>
+
+```
+2. Open the folder :
+
 
 ## Readme Add-ons ➕
 * [ ] Documentation link
