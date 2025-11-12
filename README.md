@@ -7,7 +7,7 @@
 # CODE VAULT-Code Analyzer
   ![Code Vault](cv_readme.png)
 
-  A **command-line** static code analyser based on **C++** programming language and **terminal operations**. Easy to use and **get insights and anaysis reports** for code files/directories.
+  A **terminal** based static code analyser based on **C++** programming language for **terminal operations**. Easy to use and **get insights and anaysis reports** for code files/directories.
 
 ## Documentation 📄
   The documentation for this application is available at <**weblink***> 
@@ -20,16 +20,15 @@
 * Data Analysis
 
 ## Tech Stack🚀
-* **C++**
-* Object-oriented programming (**OOP**)
-* Data Structures
-* File Handling
-  
+* Language: **C++**
+* Paradigm: Object-oriented programming (**OOP**)
+* Complexity: **Basic** and **Intermediate** algorithms.
+* Core feature: File Handling
   
 ## How it works ❓️
 1. The application  works on two modes.
-2. Mode 1: **Interactive** mode
-   Mode 2: **Command-line** mode
+2. Mode 1: **Interactive** mode    
+Mode 2: **Command-line** mode
 3. The application incorporates **O**bject-**O**riented **P**rogramming concepts for file analysis.
 4. The files are analyzed based on various file properties.
 5.  Suitable Algorithms are used based on the functions of the analyzer.
