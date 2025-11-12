@@ -1,4 +1,4 @@
-![MIT License](https://img.shields.io/github/license/tecnolgd/cpp_2.svg)
+![MIT License](https://img.shields.io/github/license/tecnolgd/.svg)
 ![Static Badge](https://img.shields.io/badge/tools-Open_Source-blue)
 ![Static Badge](https://img.shields.io/badge/interface-CLI-white)
 ![Static Badge](https://img.shields.io/badge/build-C++-teal)
@@ -28,10 +28,11 @@
   
 ## How it works ❓️
 1. The application  works on two modes.
-2. Mode 1: Interactive mode
-   Mode 2: Command-line
-3. The application incorporates Object-oriented programming concepts for file analysis.
+2. Mode 1: **Interactive** mode
+   Mode 2: **Command-line** mode
+3. The application incorporates **O**bject-**O**riented **P**rogramming concepts for file analysis.
 4. The files are analyzed based on various file properties.
+5.  Specific Algorithms are used based on the functioning of the analyzer.
 
 
 ## Future Upgrades 🛰️
