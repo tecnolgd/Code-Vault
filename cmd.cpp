@@ -4,9 +4,9 @@
 #include "main.cpp" //to inclde main.cpp functionalities as class analyzer.
 
 void printBanner() { //tool header
-    std::cout << "----------------------------------------\n"
-              << "    C++ Analyzer Beta v1.0     \n"
-              << "----------------------------------------\n";
+    std::cout <<"\t----------------------------------------\n"
+              << "\t        C++ Analyzer Beta v1.0     \n"
+              << "\t----------------------------------------\n";
 }
 
 int main(int argc, char* argv[]){ //to get the number of words used in the command to interpret the command given by the user.
