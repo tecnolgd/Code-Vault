@@ -1,4 +1,4 @@
-![MIT License](https://img.shields.io/github/license/tecnolgd/cpp_2?style=flat)
+![MIT License](https://img.shields.io/github/license/tecnolgd/cpp_2.svg)
 ![Static Badge](https://img.shields.io/badge/tools-Open_Source-blue)
 ![Static Badge](https://img.shields.io/badge/interface-CLI-white)
 ![Static Badge](https://img.shields.io/badge/build-C++-teal)
@@ -32,7 +32,7 @@
    Mode 2: **Command-line** mode
 3. The application incorporates **O**bject-**O**riented **P**rogramming concepts for file analysis.
 4. The files are analyzed based on various file properties.
-5.  Specific Algorithms are used based on the functioning of the analyzer.
+5.  Suitable Algorithms are used based on the functions of the analyzer.
 
 
 ## Future Upgrades 🛰️
@@ -45,9 +45,35 @@
 1. Clone the repository :
 ```bash
 <repo clone link>
-
 ```
 2. Open the folder :
+```bash
+ cd codevault
+```
+2) Run with  
+    * ### Makefile (*Recommended*)
+        1. Open terminal in the **codevault** folder. 
+        2. Run ***`mingw32-make`***(for windows) / ***`make`***(for linux/ios).
+        3. An executabe file called ***predicta.exe*** / ***predicta.o*** would be formed.
+        4. Run the command     
+            * for **Interactive** mode:
+              Use ***`analyzer.exe`***(windows) or ***`./analyzer`***(linux/ios)  in the terminal.
+            * for **Command-line** mode:
+              Directly type the suitable commands on the terminal interface.
+
+            *(Note: Run ***`mingw32-make clean`*** or ***`make clean`*** to clear object files based on OS)*
+        5. The application will open for user interaction.
+        ---
+
+    * ### g++(*Manual way / for beginners*)     
+        1. Open the terminal in the **Predicta** folder.
+        2. Run
+        ```bash
+        g++ main.cpp menu.cpp dailyLog.cpp weekLog.cpp history.cpp insights.cpp userBudget.cpp warning.cpp -o predicta
+        ```
+        3. An executable file called ***predicta.exe*** would be formed.
+        4. Run the command ***`predicta.exe`***(windows) or ***`./predicta`***(linux/ios) in the terminal. (same as Makefile step-d).
+        5. The application will open for user interaction.
 
 
 ## Readme Add-ons ➕
