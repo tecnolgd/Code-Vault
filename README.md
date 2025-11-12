@@ -54,10 +54,10 @@
     * ### Makefile (*Recommended*)
         1. Open terminal in the **codevault** folder. 
         2. Run ***`mingw32-make`***(for windows) / ***`make`***(for linux/ios).
-        3. An executabe file called ***predicta.exe*** / ***predicta.o*** would be formed.
+        3. An executabe file called ***cvault.exe*** / ***cvalut.o*** would be formed.
         4. Run the command     
             * for **Interactive** mode:
-              Use ***`analyzer.exe`***(windows) or ***`./analyzer`***(linux/ios)  in the terminal.
+              Use ***`cvault.exe`***(windows) or ***`./cvault`***(linux/ios)  in the terminal.
             * for **Command-line** mode:
               Directly type the suitable commands on the terminal interface.
 
@@ -66,14 +66,14 @@
         ---
 
     * ### g++(*Manual way / for beginners*)     
-        1. Open the terminal in the **Predicta** folder.
+        1. Open the terminal in the **codevault** folder.
         2. Run
         ```bash
-        g++ main.cpp menu.cpp dailyLog.cpp weekLog.cpp history.cpp insights.cpp userBudget.cpp warning.cpp -o predicta
+        g++ main.cp
         ```
-        3. An executable file called ***predicta.exe*** would be formed.
-        4. Run the command ***`predicta.exe`***(windows) or ***`./predicta`***(linux/ios) in the terminal. (same as Makefile step-d).
-        5. The application will open for user interaction.
+        3. An executable file called ***`cvault.exe`*** would be formed.
+        4. Run the command ***`cvault.exe`***(windows) or ***`./analyzer`***(linux/ios) in the terminal. (same as Makefile step-4).
+        5. The application will execute for user interaction.
 
 
 ## Readme Add-ons ➕
