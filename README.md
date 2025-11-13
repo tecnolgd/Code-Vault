@@ -31,8 +31,9 @@
 Mode 2: **Command-line** mode
 3. The application incorporates **O**bject-**O**riented **P**rogramming concepts for file analysis.
 4. The files are analyzed based on various file properties.
-5.  Suitable Algorithms are used based on the functions of the analyzer.
+5.  Suitable Algorithms are used based on the functions of the analyzer.    
 
+*Note: Detailed information in the  [**Code Vault Documentation**]()*
 
 ## Future Upgrades 🛰️
 - [ ] New analysis features
