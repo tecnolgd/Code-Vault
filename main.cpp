@@ -54,12 +54,13 @@ void analyzer::reportData() { //report generation function
              for(size_t j=0;j<files.size()-1-i;j++){
 
                 if(files[j].byte_size>files[j+1].byte_size){ //to sort bytes
-                auto t=files[j].byte_size;
-                files[j].byte_size=files[j+1].byte_size;
-                files[j+1].byte_size=t;
+                long long t=files[j].byte_size;
+                std::string s=files[j].name;
 
-                auto s=files[j].name;  //to sort file names , 'auto' - for automatic data type 
+                files[j].byte_size=files[j+1].byte_size;
                 files[j].name=files[j+1].name;
+
+                files[j+1].byte_size=t;
                 files[j+1].name=s;
                 }
             }
@@ -71,33 +72,63 @@ void analyzer::reportData() { //report generation function
                 std::cout << " - File "<<i+1<<": "<< files[i].name << " (" << files[i].byte_size << " bytes)\n";
             }
         }
+        else{
         size_t size= files.size();
         return files[size-1].byte_size;//return the max bytes since the sort is ascending order
-        
+        }
+        return 0;
     }
     void analyzer::minMax(){
-        int x=sortFileOnByte(0);//this makes sure the sortbyte bool x has value zero so as to skip the sorted files display
-        std::cout<<"Largest file: "<<x; //based on number of bytes.
+    // sortFileOnByte(false) sorts and returns the largest byte size
+    long long max_size = sortFileOnByte(0); 
+    if (max_size > 0) {
+        std::cout<<"Largest file size: "<<max_size << " bytes\n"; 
+        // Note: To show the name, you'd need to loop over the files vector 
+        // and find the file matching the max_size, as the sorting only guarantees 
+        // the size is at the end, not necessarily the name is still correct 
+        // if there are files with the same size. For simplicity, we just output the size.
+    } else {
+        std::cout << "No files to analyze for min/max.\n";
     }
+}
+    void analyzer::sortFileOnName() {
+    for (size_t i = 0; i < files.size() - 1; i++) {
+        for (size_t j = 0; j < files.size() - 1 - i; j++) {
+            // Compare names alphabetically
+            if (files[j].name > files[j+1].name) { 
+                // Swap the entire fileStructure objects
+                fileStructure temp = files[j];
+                files[j] = files[j+1];
+                files[j+1] = temp;
+            }
+        }
+    }
+}
   //check for erros correct it
     void analyzer::searchfile(const std::string& fname){ //to search the file vector based on the file name.
-        sortFileOnByte(0); //to sort the vector before binary search.
-        int size=files.size();
+        sortFileOnName(); //to sort the vector before binary search.
+        //sortFileOnByte(0);
+        size_t size=files.size();
         int key; //key - for search condition verification
-        int low=0,mid,high=size-1;
+        size_t low=0,mid,high=size-1;
         while(low<=high){   //binary search algorithm
             mid=(low+high)/2;
             if(files[mid].name == fname){
                 key=1;
                 break;
             }
-            else if(files[mid].name<fname)
+            else {if(files[mid].name<fname)
                 low=mid+1;
-                else
-                high = mid-1;
+                else{
+                    if(mid==0)
+                    break;
+                    high = mid-1;
+                }
+                
+            }
         }
         if(key==1){
-            std::cout<<"File found at location "<<mid+1<<" with "<<files[mid].byte_size<<" bytes"<<std::endl;
+            std::cout<<"File found at location "<<mid<<" with "<<files[mid].byte_size<<" bytes"<<std::endl;
         }
         else{
             std::cout<<"File not found. Try with a correct name"<<std::endl;
