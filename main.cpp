@@ -41,17 +41,17 @@ void analyzer::reportData() { //report generation function
         long long totalSizeBytes = 0;
         
         //CORE DSA: Iterating over the entire vector (array).
-        for (int i=0; i<files.size();i++) { //for loop
+        for (size_t i=0; i<files.size();i++) { //for loop
             std::cout << " - File "<<i+1<<": " << files[i].name << " (" << files[i].byte_size << " bytes)\n";
             totalSizeBytes += files[i].byte_size; //total bytes size
         }
         std::cout << "\nTotal Files Stored: " << files.size() << "\n"; //size() function
         std::cout << "Total Codebase Size: " << totalSizeBytes << " bytes\n";
     }
-    auto analyzer::sortFileOnByte(bool x){ //bubble sort algorithm
+    long long analyzer::sortFileOnByte(bool x){ //bubble sort algorithm
         //function to sort files based on byte size
-        for( int i=0;i<files.size()-1;i++){
-             for(int j=0;j<files.size()-1-i;j++){
+        for( size_t i=0;i<files.size()-1;i++){
+             for(size_t j=0;j<files.size()-1-i;j++){
 
                 if(files[j].byte_size>files[j+1].byte_size){ //to sort bytes
                 auto t=files[j].byte_size;
@@ -67,20 +67,21 @@ void analyzer::reportData() { //report generation function
 
         if(x){ //this would work if x is 1 ,i.e when the sortbyte() function is called
             std::cout<<"Sorted files based on bytes :\n";
-            for(int i=0;i<files.size();i++){
+            for(size_t i=0;i<files.size();i++){
                 std::cout << " - File "<<i+1<<": "<< files[i].name << " (" << files[i].byte_size << " bytes)\n";
             }
         }
-        int size= files.size();
+        size_t size= files.size();
         return files[size-1].byte_size;//return the max bytes since the sort is ascending order
+        
     }
     void analyzer::minMax(){
-        int x= sortFileOnByte(0);//this makes sure the sortbyte bool x has value zeo so as to skip the sorted files display
+        int x=sortFileOnByte(0);//this makes sure the sortbyte bool x has value zero so as to skip the sorted files display
         std::cout<<"Largest file: "<<x; //based on number of bytes.
     }
 
     void analyzer::searchfile(const std::string& fname){ //to search the file vector based on the file name.
-        int x= sortFileOnByte(0); //to sort the vector before binary search.
+        sortFileOnByte(0); //to sort the vector before binary search.
         int size=files.size();
         int key; //key - for search condition verification
         int low=0,mid,high=size-1;
@@ -96,7 +97,7 @@ void analyzer::reportData() { //report generation function
                 high = mid-1;
         }
         if(key==1){
-            std::cout<<"File found at location "<<mid<<" with "<<files[mid+1].byte_size<<" bytes"<<std::endl;
+            std::cout<<"File found at location "<<mid+1<<" with "<<files[mid].byte_size<<" bytes"<<std::endl;
         }
         else{
             std::cout<<"File not found. Try with a correct name"<<std::endl;
@@ -185,9 +186,9 @@ void analyzer::reportData() { //report generation function
     cliManager cli; //object of class cliManager
     cli.runterminal(a); //passing address of class analyser object 'a' to function 'runterminal' 
 
-    /* Flow of the cli.runterminal(&a); ->  object a  address--> passed to runterminal()function as argument --> later derefenced to get data or value from it --> runterminal() is executed with cli i.e., ' cli.runterminal(&a) '*/
+     Flow of the cli.runterminal(&a); ->  object a  address--> passed to runterminal()function as argument --> later derefenced to get data or value from it --> runterminal() is executed with cli i.e., ' cli.runterminal(&a) '
 
     //Basically, class analyser is the argument for function runterminal() which runs inside class cliManager.
     //return 0;
 
-//}
+}*/
