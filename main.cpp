@@ -79,7 +79,7 @@ void analyzer::reportData() { //report generation function
         int x=sortFileOnByte(0);//this makes sure the sortbyte bool x has value zero so as to skip the sorted files display
         std::cout<<"Largest file: "<<x; //based on number of bytes.
     }
-
+  //check for erros correct it
     void analyzer::searchfile(const std::string& fname){ //to search the file vector based on the file name.
         sortFileOnByte(0); //to sort the vector before binary search.
         int size=files.size();
