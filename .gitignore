@@ -4,4 +4,5 @@
 *.tmp
 *.out
 *.log
+*.o
 *.vscode/
