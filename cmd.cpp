@@ -1,7 +1,6 @@
 //working correctly ,error checks required for beta release . this file is the command line interface way i.e., using one command at a time.
-#include <iostream>
-#include <string>
-#include "main.cpp" //to inclde main.cpp functionalities as class analyzer.
+
+#include "head.hpp" //to inclde main.cpp functionalities as class analyzer.
 
 void printBanner() { //tool header
     std::cout <<"\t----------------------------------------\n"
