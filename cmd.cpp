@@ -31,7 +31,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         if (command == "report") {
             a.reportData();
         } else if (command == "fsortbyte") {
-            a.sortFileOnByte(1);
+            a.sortFileOnByte(0);
         } else if (command == "maxbyte") {
             a.minMax();
         }
