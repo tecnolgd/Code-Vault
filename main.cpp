@@ -110,15 +110,17 @@ void analyzer::reportData() { //report generation function
         //sortFileOnByte(0);
         size_t size=files.size();
         int key; //key - for search condition verification
-        size_t low=0,mid,high=size-1;
+        int low=0,high=size-1;
+        int mid;
         while(low<=high){   //binary search algorithm
             mid=(low+high)/2;
             if(files[mid].name == fname){
                 key=1;
                 break;
             }
-            else {if(files[mid].name<fname)
-                low=mid+1;
+            else {
+                if(files[mid].name<fname)
+                    low=mid+1;
                 else{
                     if(mid==0)
                     break;
