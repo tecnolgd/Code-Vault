@@ -43,7 +43,7 @@ class analyzer {
     void reportData();
     
     // Analysis and Manipulation
-    auto sortFileOnByte(bool x); // Note: Should probably return void, or the max byte size.
+    long long sortFileOnByte(bool x); // Note: Should probably return void, or the max byte size.
     void minMax();
     void searchfile(const std::string& fname);
     void searchfile(); // Interactive wrapper
