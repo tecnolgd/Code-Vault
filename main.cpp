@@ -1,52 +1,39 @@
 // interactive mode logic ( menu based kind of with ">>" arrows for each command )
+//file contains function definations
 
-//#include "head.hpp"
-#include <iostream>
-#include <vector>
-#include <string>
-#include <fstream> //file I/O
-#include <filesystem> //filesystem operations
-
-struct fileStructure {
-  std::string name;
-  long long byte_size; //for large byte-count (since files have a lot of bytes)
-};
-
-class analyzer{ //analyzer class
-  private: //private- to avoid unwanted file vector corruption
-  std::vector <fileStructure> files; //vector to store files
-
-  public:
-  void populate_data( const std::string& path=".") { //needs explanation !!
-            files.clear(); //clear any garbage data
-             std::filesystem::path p(path);
-            try {                                   //needs explanation !!
-                if (!std::filesystem::exists(p)) {
-                    std::cout << "Error: path '" << path << "' does not exist.\n";
-                    return;
-                }
-                if (!std::filesystem::is_directory(p)) {
-                    std::cout << "Error: path '" << path << "' is not a directory.\n";
-                    return;
-                }
-              std::cout << "Analyzing directory: " << path << "\n";
+#include "head.hpp"
+ 
+//analyzer class implementation
+void analyzer::populate_data( const std::string& path) { 
+    files.clear(); //clear any garbage data
+    std::filesystem::path p(path);
+    try {                                   //needs explanation !!
+        if (!std::filesystem::exists(p)) {
+            std::cout << "Error: path '" << path << "' does not exist.\n";
+            return;
+        }
+        if (!std::filesystem::is_directory(p)) {
+            std::cout << "Error: path '" << path << "' is not a directory.\n";
+            return;
+        }
+        std::cout << "Analyzing directory: " << path << "\n";
                 
-              for (const auto& entry : std::filesystem::directory_iterator(p)) { //for-each loop
-                    if (entry.is_regular_file()) {
-                        fileStructure file;
-                        file.name = entry.path().filename().string(); //needs explanation !!
-                        file.byte_size = std::filesystem::file_size(entry.path());
-                        files.push_back(file); //stack push operation
-                    }
-                }
-                std::cout << "Found " << files.size() << " files\n";
-            } catch (const std::filesystem::filesystem_error& e) {
-                std::cout << "Filesystem error: " << e.what() << "\n";
-                return;
+        for (const auto& entry : std::filesystem::directory_iterator(p)) { //for-each loop
+            if (entry.is_regular_file()) {
+                fileStructure file;
+                file.name = entry.path().filename().string(); //needs explanation !!
+                file.byte_size = std::filesystem::file_size(entry.path());
+                files.push_back(file); //stack push operation
             }
         }
-           //std::cout << "Analyzing directory: " << path << "\n";
-void reportData() { //report generation function
+        std::cout << "Found " << files.size() << " files\n";
+    } catch (const std::filesystem::filesystem_error& e) {
+            std::cout << "Filesystem error: " << e.what() << "\n";
+            return;
+        }
+}
+           
+void analyzer::reportData() { //report generation function
         if (files.empty()) { //checks if file is empty or not
             std::cout << "Vector is empty. Run 'populate' first.\n";
             return;
@@ -61,7 +48,7 @@ void reportData() { //report generation function
         std::cout << "\nTotal Files Stored: " << files.size() << "\n"; //size() function
         std::cout << "Total Codebase Size: " << totalSizeBytes << " bytes\n";
     }
-    auto sortFileOnByte(bool x){ //bubble sort algorithm
+    auto analyzer::sortFileOnByte(bool x){ //bubble sort algorithm
         //function to sort files based on byte size
         for( int i=0;i<files.size()-1;i++){
              for(int j=0;j<files.size()-1-i;j++){
@@ -87,12 +74,12 @@ void reportData() { //report generation function
         int size= files.size();
         return files[size-1].byte_size;//return the max bytes since the sort is ascending order
     }
-    void minMax(){
+    void analyzer::minMax(){
         int x= sortFileOnByte(0);//this makes sure the sortbyte bool x has value zeo so as to skip the sorted files display
         std::cout<<"Largest file: "<<x; //based on number of bytes.
     }
 
-    void searchfile(const std::string& fname){ //to search the file vector based on the file name.
+    void analyzer::searchfile(const std::string& fname){ //to search the file vector based on the file name.
         int x= sortFileOnByte(0); //to sort the vector before binary search.
         int size=files.size();
         int key; //key - for search condition verification
@@ -115,14 +102,14 @@ void reportData() { //report generation function
             std::cout<<"File not found. Try with a correct name"<<std::endl;
         }
     }
-    void searchfile() { //interactive file search wrapper
+    void analyzer::searchfile() { //interactive file search wrapper
         std::string fname;
         std::cout << "Enter name of the file to be searched :";
         std::cin >> fname;
         searchfile(fname);
     }
     
-    void lineCount(const std::string& filepath){   //function to count lines of code in a desired file (any file in the system)
+    void analyzer::lineCount(const std::string& filepath){   //function to count lines of code in a desired file (any file in the system)
         std::ifstream file(filepath); //open file for reading
         if(! file.is_open()){ //to check whether the file exists
             std::cout<<"Error: Could not open file "<<filepath<<" !"<<std::endl;
@@ -146,7 +133,7 @@ void reportData() { //report generation function
         }
     }
 
-    void lineCount() { //interactive file line count wrapper
+    void analyzer::lineCount() { //interactive file line count wrapper
         std::string filepath;
         std::cout << "Enter filename: ";
         std::cin >> filepath;
@@ -154,13 +141,11 @@ void reportData() { //report generation function
     }
              
      //Future Expansion Point: This is where advanced features will go.
-    
 
-};
-//cliManager class
-class cliManager{ //cli managing class for display of main menu
-    public:
-    void runterminal(analyzer &a){ //function to run the terminal as a whole 
+
+    //cliManager class implementation
+
+    void cliManager::runterminal(analyzer &a){ //function to run the terminal as a whole 
     std::string command;
     std::cout << "\n\tWelcome to CodeVault Basic. Focus: Vector/Array Operations.\n";
     
@@ -192,7 +177,7 @@ class cliManager{ //cli managing class for display of main menu
         }
     }
 }
-};
+
 
 //--- Execution Focus: Simplified Main Loop ---
 /*int main() {
