@@ -45,6 +45,7 @@ class analyzer {
     // Analysis and Manipulation
     long long sortFileOnByte(bool x); // Note: Should probably return void, or the max byte size.
     void minMax();
+    void sortFileOnName();
     void searchfile(const std::string& fname);
     void searchfile(); // Interactive wrapper
     
