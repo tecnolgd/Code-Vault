@@ -54,10 +54,10 @@ Mode 2: **Command-line** mode
     * ### Makefile (*Recommended*)
         1. Open terminal in the **codevault** folder. 
         2. Run ***`mingw32-make`***(for windows) / ***`make`***(for linux/ios).
-        3. An executabe file called ***cvault.exe*** / ***cvalut.o*** would be formed.
+        3. An executabe file called ***`cvault.exe`*** / ***`cvalut.o`*** would be formed.
         4. Run the command     
             * for **Interactive** mode:
-              Use ***`cvault.exe`***(windows) or ***`./cvault`***(linux/ios)  in the terminal.
+              Use ***`cvault.exe`***(windows) or simply ***`cvault`***/ ***`./cvault`***(linux/ios)  in the terminal.
             * for **Command-line** mode:
               Directly type the suitable commands on the terminal interface.
 
