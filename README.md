@@ -1,4 +1,4 @@
-![MIT License](https://img.shields.io/github/license/tecnolgd/cpp_2.svg)
+![MIT License](https://img.shields.io/github/license/tecnolgd/cpp_2?style=flat)
 ![Static Badge](https://img.shields.io/badge/tools-Open_Source-blue)
 ![Static Badge](https://img.shields.io/badge/interface-CLI-white)
 ![Static Badge](https://img.shields.io/badge/build-C++-teal)
@@ -10,7 +10,7 @@
   A **terminal** based static code analyser based on **C++** programming language for **terminal operations**. Easy to use and **get insights and anaysis reports** for code files/directories.
 
 ## Documentation 📄
-  The documentation for this application is available at <**weblink***> 
+  The documentation for this application is available at [***Code Vault documentation***]()
   
 ## Features ⚙️⚙️
 * Command line interface
@@ -32,8 +32,6 @@ Mode 2: **Command-line** mode
 3. The application incorporates **O**bject-**O**riented **P**rogramming concepts for file analysis.
 4. The files are analyzed based on various file properties.
 5.  Suitable Algorithms are used based on the functions of the analyzer.    
-
-*Note: Detailed information in the  [**Code Vault Documentation**]()*
 
 ## Future Upgrades 🛰️
 - [ ] New analysis features
