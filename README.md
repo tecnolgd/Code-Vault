@@ -1,4 +1,4 @@
-![MIT License](https://img.shields.io/github/license/tecnolgd/cpp_2?style=flat)
+i![MIT License](https://img.shields.io/github/license/tecnolgd/cpp_2?style=flat)
 ![Static Badge](https://img.shields.io/badge/tools-Open_Source-blue)
 ![Static Badge](https://img.shields.io/badge/interface-CLI-white)
 ![Static Badge](https://img.shields.io/badge/build-C++-teal)
@@ -55,7 +55,8 @@ Mode 2: **Command-line** mode
         3. An executabe file called ***`cvault.exe`*** / ***`cvalut.o`*** would be formed.
         4. Run the command     
             * for **Interactive** mode:
-              Use ***`cvault.exe`***(windows) or simply ***`cvault`***/ ***`./cvault`***(linux/ios)  in the terminal.
+              Use ***`cvault.exe`***(for windows) or simply ***`cvault`***
+              Use ***`./cvault`***(for linux/ios)  in the terminal.
             * for **Command-line** mode:
               Directly type the suitable commands on the terminal interface.
 
