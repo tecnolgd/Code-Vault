@@ -80,7 +80,7 @@ Mode 2: **Command-line** mode
 * [ ] Sample test cases
 * [ ] Output Screenshots
 * [ ] Dependencies
-* [ ] Makefile 
+* [x] Makefile 
 
 #### Author
 ***tecnolgd***
