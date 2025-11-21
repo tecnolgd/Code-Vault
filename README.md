@@ -1,4 +1,4 @@
-i![MIT License](https://img.shields.io/github/license/tecnolgd/cpp_2?style=flat)
+![MIT License](https://img.shields.io/github/license/tecnolgd/cpp_2?style=flat)
 ![Static Badge](https://img.shields.io/badge/tools-Open_Source-blue)
 ![Static Badge](https://img.shields.io/badge/interface-CLI-white)
 ![Static Badge](https://img.shields.io/badge/build-C++-teal)
