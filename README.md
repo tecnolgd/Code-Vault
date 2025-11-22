@@ -71,8 +71,8 @@ Mode 2: **Command-line** mode
         g++ main.cp
         ```
         3. An executable file called ***`cvault.exe`*** would be formed.
-        4. Run the command ***`cvault.exe`***(windows) or ***`./analyzer`***(linux/ios) in the terminal. (same as Makefile step-4).
-        5. The application will execute for user interaction.
+        4. Run the command ***`cvault.exe`***(windows) or ***`./cvault`***(linux/ios) in the terminal. (same as Makefile step-4).
+        5. The application will start its execution.
 
 
 ## Recent Add-ons ➕
