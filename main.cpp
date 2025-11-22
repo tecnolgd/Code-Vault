@@ -181,13 +181,14 @@ void analyzer::reportData() { //report generation function
 
     void cliManager::runterminal(analyzer &a){ //function to run the terminal as a whole 
     std::string command;
-    std::cout << "\n\tWelcome to CodeVault Basic. Focus: Vector/Array Operations.\n";
+    std::cout << "\n\tWelcome to CodeVault Basics.\n";
     
     while (true) {
         std::cout << "\n>>>";
         std::cin >> command;
         std::cin.clear();
         if ((command == "exit")||(command=="quit")) {
+            std::cout<<"Code Vault interactive-mode terminated."<<std::endl;
             break;
         } else if ((command =="populate") || (command=="report")) {
             a.populate_data();
