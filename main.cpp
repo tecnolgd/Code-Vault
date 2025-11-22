@@ -130,7 +130,7 @@ void analyzer::reportData() { //report generation function
             }
         }
         if(key==1){
-            std::cout<<"File found at location "<<mid<<" with "<<files[mid].byte_size<<" bytes"<<std::endl;
+            std::cout<<"File found: "<<files[mid].name<<" with "<<files[mid].byte_size<<" bytes"<<std::endl;
         }
         else{
             std::cout<<"File not found. Try with a correct name"<<std::endl;
