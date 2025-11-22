@@ -4,7 +4,7 @@
 
 void printBanner() { //tool header
     std::cout <<"\t----------------------------------------\n"
-              << "\t        C++ Analyzer Beta v1.0     \n"
+              << "\t        Code Vault (Beta)     \n"
               << "\t----------------------------------------\n";
 }
 
