@@ -78,7 +78,8 @@ void analyzer::reportData() { //report generation function
         }
         return 0;
     }
-    void analyzer::minMax(){
+    
+void analyzer::minMax(){
     // sortFileOnByte(false) sorts and returns the largest byte size
     long long max_size = sortFileOnByte(0); 
     if (max_size > 0) {
@@ -91,7 +92,8 @@ void analyzer::reportData() { //report generation function
         std::cout << "No files to analyze for min/max.\n";
     }
 }
-    void analyzer::sortFileOnName() {
+//sort file for search functionality
+void analyzer::sortFileOnName() {
     for (size_t i = 0; i < files.size() - 1; i++) {
         for (size_t j = 0; j < files.size() - 1 - i; j++) {
             // Compare names alphabetically
@@ -104,8 +106,8 @@ void analyzer::reportData() { //report generation function
         }
     }
 }
-  //check for erros correct it
-    void analyzer::searchfile(const std::string& fname){ //to search the file vector based on the file name.
+  
+void analyzer::searchfile(const std::string& fname){ //to search the file vector based on the file name.
         sortFileOnName(); //to sort the vector before binary search.
         //sortFileOnByte(0);
         size_t size=files.size();
@@ -224,5 +226,6 @@ void analyzer::reportData() { //report generation function
 
     //Basically, class analyser is the argument for function runterminal() which runs inside class cliManager.
     //return 0;
+
 
 }*/
