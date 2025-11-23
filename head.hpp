@@ -1,5 +1,4 @@
-
-//need corrections and correct research before implementation
+//head file 
 
 #ifndef HEAD_HPP
 #define HEAD_HPP
