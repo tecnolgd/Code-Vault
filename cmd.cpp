@@ -1,5 +1,4 @@
 //working correctly ,error checks required for beta release . this file is the command line interface way i.e., using one command at a time.
-
 #include "head.hpp" //to inclde main.cpp functionalities as class analyzer.
 
 void printBanner() { //tool header
@@ -37,7 +36,6 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
         }
         return 0;
     }
-
 // Commands that take a filename as 2nd arg (or prompt if missing)
     else if (command == "flcount") {
         if (argc >= 3) {
