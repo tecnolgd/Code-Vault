@@ -1,4 +1,4 @@
-// interactive mode logic ( menu based kind of with ">>" arrows for each command )
+// interactive mode logic ( menu based with ">>" arrows for each command )
 //file contains function definations
 
 #include "head.hpp"
@@ -27,7 +27,7 @@ void analyzer::populate_data( const std::string& path) {
             }
         }
         std::cout << "Found " << files.size() << " files\n";
-    } catch (const std::filesystem::filesystem_error& e) {
+    } catch (const std::filesystem::filesystem_error& e) { //error detection and display
             std::cout << "Filesystem error: " << e.what() << "\n";
             return;
         }
