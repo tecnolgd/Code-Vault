@@ -41,7 +41,7 @@
 ## How to run ?🔛
 1. Clone the repository :
 ```bash
-<repo clone link>
+git clone https://github.com/tecnolgd/cvault
 ```
 2. Open the folder :
 ```bash
@@ -64,7 +64,7 @@
         ---
 
     * ### g++(*Manual way / for beginners*)     
-        1. Open the terminal in the **codevault** folder.
+        1. Open the terminal in the **cvault** folder.
         2. Run
         ```bash
         g++ main.cp
