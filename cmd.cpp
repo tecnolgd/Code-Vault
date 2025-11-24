@@ -1,9 +1,9 @@
 //working correctly ,error checks required for beta release . this file is the command line interface way i.e., using one command at a time.
 #include "head.hpp" //to inclde main.cpp functionalities as class analyzer.
 
-void printBanner() { //tool header
+void printBanner() { //tool headeder
     std::cout <<"\t----------------------------------------\n"
-              << "\t        Code Vault (Beta)     \n"
+              << "\t           Code Vault (beta)    \n"
               << "\t----------------------------------------\n";
 }
 
