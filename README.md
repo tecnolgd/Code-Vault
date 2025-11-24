@@ -49,7 +49,7 @@ git clone https://github.com/tecnolgd/cvault
 ```
 2) Run with  
     * ### Makefile (*Recommended*)
-        1. Open terminal in the **codevault** folder. 
+        1. Open terminal in the **cvault** folder. 
         2. Run ***`mingw32-make`***(for windows) / ***`make`***(for linux/ios).
         3. An executabe file called ***`cvault.exe`*** / ***`cvalut.o`*** would be formed.
         4. Run the command     
@@ -70,14 +70,14 @@ git clone https://github.com/tecnolgd/cvault
         g++ main.cpp cmd.cpp -o cvault
         ```
         3. An executable file called ***`cvault.exe`*** would be formed.
-        4. Run the command ***`cvault.exe`***(windows) or ***`./cvault`***(linux/ios) in the terminal. (same as Makefile step-4).
+        4. Run the command ***`cvault.exe`***or simply ***`cvault`***(windows) or ***`./cvault`***(linux/ios) in the terminal. (same as Makefile step-4).
         5. The application will start its execution.
 
 
 ## Recent Add-ons ➕
 * [ ] Documentation link
 * [ ] Sample test cases
-* [ ] Output Screenshots
+* [ ] Demo
 * [ ] Dependencies
 * [x] Makefile    
 
