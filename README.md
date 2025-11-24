@@ -67,7 +67,7 @@ git clone https://github.com/tecnolgd/cvault
         1. Open the terminal in the **cvault** folder.
         2. Run
         ```bash
-        g++ main.cp
+        g++ main.cpp cmd.cpp -o cvault
         ```
         3. An executable file called ***`cvault.exe`*** would be formed.
         4. Run the command ***`cvault.exe`***(windows) or ***`./cvault`***(linux/ios) in the terminal. (same as Makefile step-4).
