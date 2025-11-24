@@ -45,7 +45,7 @@
 ```
 2. Open the folder :
 ```bash
- cd codevault
+ cd cvault
 ```
 2) Run with  
     * ### Makefile (*Recommended*)
