@@ -15,7 +15,7 @@
 ## Features ⚙️⚙️
 * Command line interface
 * Interactive mode
-* Easy build
+* Easy build and usage
 * Smooth interface
 * Data Analysis
 
