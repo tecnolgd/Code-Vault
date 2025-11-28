@@ -2,9 +2,13 @@
 #include "head.hpp" //to inclde main.cpp functionalities as class analyzer.
 
 void printBanner() { //tool headeder
-    std::cout <<"\t----------------------------------------\n"
-              << "\t           Code Vault (beta)    \n"
-              << "\t----------------------------------------\n";
+    std::cout<<"\t        ####    ####"<<std::endl;
+    std::cout<<"\t      ####    ####"<<std::endl;
+    std::cout<<"\t    ####    ####"<<std::endl;
+    std::cout<<"\t  ####    ####     Code Vault (beta)"<<std::endl;
+    std::cout<<"\t    ####    ####"<<std::endl;
+    std::cout<<"\t      ####    ####"<<std::endl;
+    std::cout<<"\t        ####    ####"<<std::endl;
 }
 
 int main(int argc, char* argv[]){ //to get the number of words used in the command to interpret the command given by the user.
