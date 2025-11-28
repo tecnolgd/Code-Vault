@@ -9,8 +9,6 @@ void printBanner() { //tool headeder
     std::cout<<"\t                  ####    ####"<<std::endl;
     std::cout<<"\t                ####    ####"<<std::endl;
     std::cout<<"\t              ####    #### "<<std::endl;
-   
-    
 }
 
 int main(int argc, char* argv[]){ //to get the number of words used in the command to interpret the command given by the user.
