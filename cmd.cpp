@@ -17,7 +17,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     printBanner();
     
     if(argc<2){ //error check
-        std::cout<<"Starting interactive mode ...\n";
+        std::cout<<"\nStarting interactive mode ...\n";
         cli.runterminal(a); //passing address of class analyser object 'a' to function 'runterminal' 
         return 0;
     }
