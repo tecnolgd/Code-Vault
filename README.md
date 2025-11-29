@@ -3,6 +3,7 @@
 ![Static Badge](https://img.shields.io/badge/interface-CLI-white)
 ![Static Badge](https://img.shields.io/badge/build-C++-teal)
 ![Static Badge](https://img.shields.io/badge/release-beta(planned)-orange)
+[![C/C++ CI](https://github.com/tecnolgd/Code-Vault/actions/workflows/c-cpp.yml/badge.svg?event=status)](https://github.com/tecnolgd/Code-Vault/actions/workflows/c-cpp.yml)
 
 # CODE VAULT-Code Analyzer
   ![Code Vault](cv_readme.png)
