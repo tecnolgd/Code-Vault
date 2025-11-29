@@ -1,5 +1,5 @@
 // interactive mode logic ( menu based with ">>" arrows for each command )
-//file contains function definations
+//file contains all function definations
 
 #include "head.hpp"
  
@@ -7,7 +7,7 @@
 void analyzer::populate_data( const std::string& path) { 
     files.clear(); //clear any garbage data
     std::filesystem::path p(path);
-    try {                                   //needs explanation !!
+    try {                                   // check for probable errors
         if (!std::filesystem::exists(p)) {
             std::cout << "Error: path '" << path << "' does not exist.\n";
             return;
@@ -73,8 +73,8 @@ void analyzer::reportData() { //report generation function
             }
         }
         else{
-        size_t size= files.size();
-        return files[size-1].byte_size;//return the max bytes since the sort is ascending order
+            size_t size= files.size();
+            return files[size-1].byte_size;//return the max bytes since the sort is ascending order
         }
         return 0;
     }
@@ -125,7 +125,7 @@ void analyzer::searchfile(const std::string& fname){ //to search the file vector
                     low=mid+1;
                 else{
                     if(mid==0)
-                    break;
+                        break;
                     high = mid-1;
                 }
                 
@@ -216,4 +216,4 @@ void analyzer::searchfile(const std::string& fname){ //to search the file vector
 }
 //Developer notes:
 //Flow of the cli.runterminal(&a); ->  object a  address--> passed to runterminal()function as argument --> later derefenced to get data or value from it --> runterminal() is executed with cli i.e., ' cli.runterminal(&a) '
-//Basically, class analyser is the argument for function runterminal() which runs inside class cliManager.
+//Basically, class analyzer is the argument for function runterminal() which runs inside class cliManager.
