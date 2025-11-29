@@ -1,7 +1,7 @@
 //working correctly ,error checks required for beta release . this file is the command line interface way i.e., using one command at a time.
-#include "head.hpp" //to inclde main.cpp functionalities as class analyzer.
+#include "head.hpp" //to inculde main.cpp functionalities as class analyzer.
 
-void printBanner() { //tool headeder
+void printBanner() { //tool logo
     std::cout<<"\t              ####    ####"<<std::endl;
     std::cout<<"\t                ####    ####"<<std::endl;
     std::cout<<"\t                  ####    ####"<<std::endl;
@@ -62,7 +62,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
     else if(command == "creds"){//credits and author details.
             printf("\n\tCredits :\nAuthor: tecnolgd\nDocumentation at https://c.com\n");
     }
-    else if (command == "help") {
+    else if (command == "help") {//command reference
         std::cout << "\nAvailable commands:\n"
                   << "populate [path]       - Load files from directory\n"
                   << "report [path]         - Show analysis report\n"
