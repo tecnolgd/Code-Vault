@@ -8,10 +8,7 @@
 #include <string>
 #include <fstream>
 #include <filesystem>
-#include <algorithm> // For std::sort, used in minMax/searchfile indirectly
-
-// Define the namespace alias for convenience
-//namespace fs = std::filesystem;
+#include <algorithm> 
 
 // -----------------------------------------------------------------
 // 1. DATA STRUCTURES
