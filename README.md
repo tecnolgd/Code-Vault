@@ -54,13 +54,13 @@ git clone https://github.com/tecnolgd/cvault
         3. An executabe file called ***`cvault.exe`*** / ***`cvalut.o`*** would be formed.
         4. Run the command     
             * for **Interactive** mode:
-              Use ***`cvault.exe`***(for windows) or simply ***`cvault`***
+              Use ***`cvault.exe`***(for windows cmd) or simply ***`cvault`***
               Use ***`./cvault`***(for linux/ios)  in the terminal.
             * for **Command-line** mode:
               Directly type the suitable commands on the terminal interface.
 
             *(Note: Run ***`mingw32-make clean`*** or ***`make clean`*** to clear object files based on OS)*
-        5. The application will open for user interaction.
+        5. The application will start for user interaction.
         ---
 
     * ### g++(*Manual way / for beginners*)     
@@ -70,8 +70,8 @@ git clone https://github.com/tecnolgd/cvault
         g++ main.cpp cmd.cpp -o cvault
         ```
         3. An executable file called ***`cvault.exe`*** would be formed.
-        4. Run the command ***`cvault.exe`***or simply ***`cvault`***(windows) or ***`./cvault`***(linux/ios) in the terminal. (same as Makefile step-4).
-        5. The application will start its execution.
+        4. The command-line mode will be activated.
+        5. Start writing commands based on your need. *(Refer [**documentation**]() for in-depth details)*
 
 
 ## Recent Add-ons ➕
