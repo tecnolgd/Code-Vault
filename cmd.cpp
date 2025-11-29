@@ -11,7 +11,7 @@ void printBanner() { //tool logo
     std::cout<<"\t              ####    #### "<<std::endl;
 }
 
-int main(int argc, char* argv[]){ //to get the number of words used in the command to interpret the command given by the user.
+int main(int argc, char* argv[]){ //to get the number of words used in the command entered to interpret the literal command given by the user.
     analyzer a; //object of class analyser
     cliManager cli; //object of class cliManager
     printBanner();
@@ -67,7 +67,7 @@ int main(int argc, char* argv[]){ //to get the number of words used in the comma
                   << "populate [path]       - Load files from directory\n"
                   << "report [path]         - Show analysis report\n"
                   << "fsortbyte [path]      - Sort files by size and display\n"
-                  << "fmaxbyte [path]        - Show largest file\n"
+                  << "fmaxbyte [path]       - Show largest file\n"
                   << "fsearch [file name]   - Search for a file (or prompt)\n"
                   << "flcount [file name]   - Count lines in a file (or prompt)\n"
                   << "creds                 - Credits and documentation\n"
