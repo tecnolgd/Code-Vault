@@ -11,7 +11,7 @@
   A **terminal** based static file analyser based on **C++** programming language through **command line operations**. Easy to use and **get insights and anaysis reports** for code files/directories.
 
 ## Documentation 📄
-  The documentation for this application is available at [***Code Vault documentation***]()
+  The documentation for this application is available at [***Code Vault documentation***]( https://tecnolgd.github.io/Code-Vault-doc)
   
 ## Features ⚙️⚙️
 * Command line interface
@@ -72,14 +72,13 @@ git clone https://github.com/tecnolgd/cvault
         ```
         3. An executable file called ***`cvault.exe`*** would be formed.
         4. The command-line mode will be activated.
-        5. Start writing commands based on your need. *(Refer [**documentation**]() for in-depth details)*
+        5. Start writing commands based on your need. *(Refer [**documentation**]( https://tecnolgd.github.io/Code-Vault-doc) for in-depth details)*
 
 
 ## Recent Add-ons ➕
-* [ ] Documentation link
-* [ ] Sample test cases
+* [x] Documentation link
 * [ ] Demo
-* [ ] Dependencies
+* [ ] Improved Comments in source code
 * [x] Makefile    
 
 Author    
