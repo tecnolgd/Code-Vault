@@ -206,7 +206,7 @@ void analyzer::searchfile(const std::string& fname){ //to search the file vector
         }else if(command == "flcount"){//count number of lines in any file in the system.
             a.lineCount();
         }else if(command == "creds"){//credits and author details.
-            printf("\n\tCredits :\nAuthor: tecnolgd\nDocumentation at https://c.com\n");
+            printf("\n\tCredits :\nAuthor: tecnolgd\nDocumentation at  https://tecnolgd.github.io/Code-Vault-doc\n");
         }else if (command == "help") {//help option 
             std::cout << "\n\t-- Available commands --\n populate  - reading /fetching file names and byte size\n fsortbyte - display the files sorted based on byte size\n report    - summarize key findings regarding file data\n fsearch   - to sreach for a file based on its name\n fmaxbyte  - gives the max byte file\n exit/quit - terminate from the application\n flcount   - display number of lines of code in a desired file\n creds     - tool credits and doc details\n";
         } else {
