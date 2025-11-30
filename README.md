@@ -2,7 +2,7 @@
 ![Static Badge](https://img.shields.io/badge/tools-Open_Source-blue)
 ![Static Badge](https://img.shields.io/badge/interface-CLI-white)
 ![Static Badge](https://img.shields.io/badge/build-C++-teal)
-![Static Badge](https://img.shields.io/badge/release-beta(planned)-orange)
+![Static Badge](https://img.shields.io/badge/release-beta-orange)
 
 
 # CODE VAULT-Code Analyzer
