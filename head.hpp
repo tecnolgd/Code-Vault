@@ -1,5 +1,4 @@
 //head file 
-
 #ifndef HEAD_HPP
 #define HEAD_HPP
 
@@ -10,9 +9,7 @@
 #include <filesystem>
 #include <algorithm> 
 
-// -----------------------------------------------------------------
 // 1. DATA STRUCTURES
-
 struct fileStructure {
   std::string name;
   long long byte_size;
