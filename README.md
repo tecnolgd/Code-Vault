@@ -78,9 +78,11 @@ git clone https://github.com/tecnolgd/cvault
 
 ## Recent Add-ons ➕
 * [x] Documentation link
+* [x] Makefile    
+* [x] Discussions 
 * [ ] Demo
 * [ ] Improved Comments in source code
-* [x] Makefile    
+
 
 Author    
 ***tecnolgd***
