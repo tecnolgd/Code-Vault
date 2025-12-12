@@ -1,5 +1,4 @@
 //head file 
-
 #ifndef HEAD_HPP
 #define HEAD_HPP
 
@@ -10,12 +9,7 @@
 #include <filesystem>
 #include <algorithm> 
 
-// -----------------------------------------------------------------
 // 1. DATA STRUCTURES
-// -----------------------------------------------------------------
-/**
- * @brief Represents the core metadata for an analyzed file.
- */
 struct fileStructure {
   std::string name;
   long long byte_size;
@@ -25,10 +19,6 @@ struct fileStructure {
 // 2. CLASS DECLARATIONS (Interface Only)
 // -----------------------------------------------------------------
 
-/**
- * @brief Core logic class for file system analysis and data manipulation.
- * * Contains methods for populating data, reporting, sorting, and searching.
- */
 class analyzer {
   private:
     std::vector<fileStructure> files;
@@ -50,9 +40,7 @@ class analyzer {
     void lineCount(); // Interactive wrapper
 };
 
-/**
- * @brief Manages the user interface for Interactive Mode.
- */
+
 class cliManager {
   public:
     /**
