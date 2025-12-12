@@ -7,7 +7,7 @@
 
 
 # CODE VAULT-Code Analyzer
-  ![Code Vault](cv_readme.png)
+![Code Vault](cv_readme.png)
 
   A **terminal** based static file analyser based on **C++** programming language through **command line operations**. Easy to use and **get insights and anaysis reports** for code files/directories.
 
