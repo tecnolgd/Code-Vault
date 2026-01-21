@@ -1,7 +1,7 @@
 ![MIT License](https://img.shields.io/github/license/tecnolgd/Code-Vault?style=flat)
 ![Static Badge](https://img.shields.io/badge/tools-Open_Source-lightblue)
 ![Static Badge](https://img.shields.io/badge/interface-CLI-white)
-![Static Badge](https://img.shields.io/badge/build-C++-teal)
+![Static Badge](https://img.shields.io/badge/made_with-C++-teal)
 ![Static Badge](https://img.shields.io/badge/release-beta-orange)
 ![GitHub Discussions](https://img.shields.io/github/discussions/tecnolgd/Code-Vault)
 
