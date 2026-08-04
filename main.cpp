@@ -53,7 +53,7 @@ extern "C"{
         return static_cast<int>(files.size());
     }
     
-    const char* get_file_name(int index) { //returns file name 
+    const char* getFileName(int index) { //returns file name 
         return files[index].name.c_str(); 
     }
 
