@@ -31,6 +31,6 @@ extern "C"{
   long long int getTotalBytes();
   int getFileCount();
   const char* getFileName(int index);
-  long long getFileSize(int index); 
+  long long int getFileSize(int index); 
 }
 #endif

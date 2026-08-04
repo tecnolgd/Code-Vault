@@ -57,7 +57,7 @@ extern "C"{
         return files[index].name.c_str(); 
     }
     
-    long long getFileSize(int index) { //returns file size
+    long long int getFileSize(int index) { //returns file size
         return files[index].byte_size; 
     }
 
