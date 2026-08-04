@@ -30,6 +30,7 @@ extern "C"{
   long int lineCount(const char* filepath);
   long long int getTotalBytes();
   int getFileCount();
-  const char* getFileName(int index); 
+  const char* getFileName(int index);
+  long long getFileSize(int index); 
 }
 #endif

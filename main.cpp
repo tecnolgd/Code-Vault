@@ -56,12 +56,15 @@ extern "C"{
     const char* getFileName(int index) { //returns file name 
         return files[index].name.c_str(); 
     }
-
+    
+    long long getFileSize(int index) { //returns file size
+        return files[index].byte_size; 
+    }
 
     void sortFileOnByte(){ //bubble sort algorithm
             
         if(files.empty()){
-            return -1;
+            return;
         }
 
         //function to sort files based on byte size
