@@ -21,7 +21,7 @@ extern "C"{
   int populateData(const char* path = ".");
       
   // Analysis and Manipulation
-  long long int sortFileOnByte(bool flag); // Note: Should probably return void, or the max byte size.
+  void sortFileOnByte(); // internal sort
   long long int  maxFile();
   void sortFileOnName(); //for file search operation
   long long int searchFile(const char* fname);
