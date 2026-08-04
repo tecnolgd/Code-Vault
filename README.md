@@ -20,6 +20,7 @@
 - `sortFileOnByte()` / `maxFile()` — sort files by size and retrieve the largest size
 - `sortFileOnName()` / `searchFile()` — sort files by name and search by filename
 - `lineCount()` — count lines in a text file
+- `getFileName()` - returns the name of the file present at a given index
 
 ## Requirements
 
