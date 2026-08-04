@@ -21,11 +21,14 @@
 - `sortFileOnName()` / `searchFile()` — sort files by name and search by filename
 - `lineCount()` — count lines in a text file
 - `getFileName()` - returns the name of the file present at a given index
+- `getFileSize()` - returns the size(bytes) of the file present at a given index
+
 
 ## Requirements
 
 - C++17-compatible compiler
 - Standard library support for `<filesystem>`
+
 
 ## Build Example
 
@@ -35,6 +38,7 @@ cd libcvault
 g++ -std=c++17 -c main.cpp -o libcvault.o
 g++ -std=c++17 my_app.cpp libcvault.o -o my_app
 ```
+
 
 ## Example Usage
 
@@ -55,8 +59,11 @@ int main() {
     return 0;
 }
 ```
+
+
 ## Documentation
 - [Library reference](docs/reference.md)
+
 
 ## Author & License
 
