@@ -12,6 +12,7 @@ The library includes:
 - maximum file size lookup
 - filename-based search
 - line count for text files
+- file name lookup
 
 
 ## 2. Build and Integration
@@ -76,6 +77,8 @@ Searches the loaded file list by filename, returning the file size if found or `
 - `long int lineCount(const char* filepath);`      
 Returns the number of lines in the specified file, or `-1` if the file cannot be opened.
 
+- `const char* getFileName(int index);`       
+Returns the name of the file present at a given index.
 
 ## 4. Example Usage
 
