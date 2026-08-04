@@ -91,14 +91,9 @@ extern "C"{
         sortFileOnByte(); //ascending sort
         
         size_t size= files.size();
-        return files[size-1].byte_size;//return the max bytes since the sort is ascending order
- 
-        if (max_size > 0) {
-            
-            return max_size;
-            // Note: To show the name, you'd need to loop over the files vector and find the file matching the max_size, as the sorting only guarantees
-            // the size is at the end, not necessarily the name is still correct 
-            // if there are files with the same size. For simplicity, we just output the size.
+
+        if(size > 0){
+            return files[size-1].byte_size;//return the max bytes since the sort is ascending order
         }
         return -1;
     }
