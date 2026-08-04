@@ -38,7 +38,7 @@ extern "C"{
     }
 
             
-    long long int getTotalBytes() {
+    long long int getTotalBytes() { //returns total bytes
         if (files.empty()) return 0;
         
         long long totalSizeBytes = 0;
@@ -49,12 +49,16 @@ extern "C"{
     }
 
  
-    int getFileCount() {
+    int getFileCount() { //returns file count
         return static_cast<int>(files.size());
+    }
+    
+    const char* get_file_name(int index) { //returns file name 
+        return files[index].name.c_str(); 
     }
 
 
-    long long int sortFileOnByte(bool flag){ //bubble sort algorithm
+    void sortFileOnByte(){ //bubble sort algorithm
             
         if(files.empty()){
             return -1;
@@ -76,18 +80,16 @@ extern "C"{
                 }
             }
         }
-        if(flag){ //ignore this section when 'fsortbyte' is invoked
-            size_t size= files.size();
-            return files[size-1].byte_size;//return the max bytes since the sort is ascending order
-        }
-        return 0;
     }
 
         
     long long int maxFile(){
 
-        long long max_size = sortFileOnByte(true); 
-
+        sortFileOnByte(); //ascending sort
+        
+        size_t size= files.size();
+        return files[size-1].byte_size;//return the max bytes since the sort is ascending order
+ 
         if (max_size > 0) {
             
             return max_size;
