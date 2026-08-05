@@ -6,7 +6,7 @@ This project is implemented as a C++ library rather than a standalone command-li
 
 The library includes:
 
-- directory traversal with file metadata collection
+- directory traversal(recursive) with file metadata collection
 - file count and total byte-size computation
 - ascending sort by file size
 - maximum file size lookup
@@ -46,7 +46,10 @@ Include the header:
 ```
 
 - `int populateData(const char* path);`      
-Loads file names and sizes from the given directory into the library's internal list.
+Loads file names and sizes from the given directory into the library's internal list. The scanning is recursive in nature.       
+
+> [!IMPORTANT]       
+> The directory scanning bypasses **restricted system folders** to prevent  unhandled filesystem errors.
 
     Return values:
     - `0` - success

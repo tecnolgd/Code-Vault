@@ -1,6 +1,7 @@
 //function defination file
 
 #include "head.hpp"
+#include <filesystem>
  
 
 std::vector<fileStructure> files;
@@ -18,11 +19,15 @@ extern "C"{
             if (!std::filesystem::is_directory(p)) {
                 return -2;
             }
-                    
-            for (const auto& entry : std::filesystem::directory_iterator(p)) { //for-each loop
+            
+            auto options = std::filesystem::directory_options::skip_permission_denied; //skips protected folders to avoid crashes while scanning protected folders
+
+            for (const auto& entry : std::filesystem::recursive_directory_iterator(p, options)) { //for-each loop
                 if (entry.is_regular_file()) {
                     fileStructure file;
-                    file.name = entry.path().filename().string(); //needs explanation !!
+                    
+                    file.name = std::filesystem::relative(entry.path(), p).string(); //saves relative or full path (e.g., "src/main.cpp") as the file name
+
                     file.byte_size = std::filesystem::file_size(entry.path());
                     files.push_back(file); //stack push operation
                 }
