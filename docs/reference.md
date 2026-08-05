@@ -46,7 +46,10 @@ Include the header:
 ```
 
 - `int populateData(const char* path);`      
-Loads file names and sizes from the given directory into the library's internal list.
+Loads file names and sizes from the given directory into the library's internal list. The scanning is recursive in nature.       
+
+> [!IMPORTANT]       
+> The directory scanning bypasses **restricted system folders** to prevent  unhandled filesystem errors.
 
     Return values:
     - `0` - success
