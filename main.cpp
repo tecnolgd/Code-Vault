@@ -20,7 +20,7 @@ extern "C"{
                 return -2;
             }
             
-            auto options = std::filesystem::directory_options::skip_permission_denied; //avoid crashes while scanning protected folders
+            auto options = std::filesystem::directory_options::skip_permission_denied; //skips protected folders to avoid crashes while scanning protected folders
 
             for (const auto& entry : std::filesystem::recursive_directory_iterator(p, options)) { //for-each loop
                 if (entry.is_regular_file()) {
