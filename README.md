@@ -22,6 +22,7 @@
 - `lineCount()` — count lines in a text file
 - `getFileName()` - returns the name of the file present at a given index
 - `getFileSize()` - returns the size(bytes) of the file present at a given index
+- `getFiles()` - returns a raw pointer to the internal memory buffer of the file list
 
 
 ## Requirements
@@ -60,6 +61,13 @@ int main() {
 }
 ```
 
+## Output
+
+```txt
+Files found: 233
+Total bytes: 585441
+Lines in head.hpp: 38
+```
 
 ## Documentation
 - [Library reference](docs/reference.md)
