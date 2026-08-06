@@ -1,6 +1,7 @@
 //function defination file
 
 #include "head.hpp"
+#include <cstddef>
 #include <filesystem>
  
 
@@ -18,7 +19,7 @@ extern "C"{
             }
             if (!std::filesystem::is_directory(p)) {
                 return -2;
-            }
+             }
             
             auto options = std::filesystem::directory_options::skip_permission_denied; //skips protected folders to avoid crashes while scanning protected folders
 
@@ -185,7 +186,17 @@ extern "C"{
         }   
          return 0;
     }
-}
 
-    
+
+
+    // returns pointer to the populated file list/array
+    const fileStructure* getFiles(size_t* out_count){
+        if(out_count){
+            *out_count = files.size();
+        }
+
+        return files.empty() ? nullptr: files.data();
+    }
+
+}    
     //Future Expansion Point: This is where advanced features will go.
