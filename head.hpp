@@ -32,5 +32,7 @@ extern "C"{
   int getFileCount();
   const char* getFileName(int index);
   long long int getFileSize(int index); 
+  const fileStructure* getFiles(size_t* out_count);
+
 }
 #endif
