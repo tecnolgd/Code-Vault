@@ -14,6 +14,8 @@ The library includes:
 - line count for text files
 - file name lookup
 - file size lookup
+- file list access
+
 
 ## 2. Build and Integration
 
@@ -85,24 +87,6 @@ Returns the name of the file present at a given index.
 
 - `long long int getFileSize(int index);`      
 Returns the size(bytes) of the file present at a given index.
+- ` const fileStructure* getFiles(size_t* out_count);`
+Returns a raw pointer to the internal memory buffer of the file list when provided with the file count.
 
-
-## 4. Example Usage
-
-```cpp
-#include "head.hpp"
-#include <iostream>
-
-int main() {
-    if (populateData(".") != 0) {
-        std::cerr << "Directory scan failed\n";
-        return 1;
-    }
-
-    std::cout << "Files found: " << getFileCount() << "\n";
-    std::cout << "Total bytes: " << getTotalBytes() << "\n";
-    std::cout << "Lines in head.hpp: " << lineCount("head.hpp") << "\n";
-
-    return 0;
-}
-```
