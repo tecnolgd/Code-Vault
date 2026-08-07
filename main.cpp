@@ -3,9 +3,13 @@
 #include "head.hpp"
 #include <cstddef>
 #include <filesystem>
+#include <algorithm> //for stl based algo usage
+#include <unordered_map> //for hash map usage
  
 
 std::vector<fileStructure> files;
+
+std::unordered_map<std::string, long long int> fileMap; //to store file_name-byte_size map
 
 extern "C"{
 
@@ -67,34 +71,21 @@ extern "C"{
         return files[index].byte_size; 
     }
 
-    void sortFileOnByte(){ //bubble sort algorithm
-            
+    void sortFileOnByte(){ 
+
         if(files.empty()){
             return;
         }
 
-        //function to sort files based on byte size
-        for( size_t i=0;i<files.size()-1;i++){
-            for(size_t j=0;j<files.size()-1-i;j++){
-
-                if(files[j].byte_size>files[j+1].byte_size){ //to sort bytes
-                    long long t=files[j].byte_size;
-                    std::string s=files[j].name;
-
-                    files[j].byte_size=files[j+1].byte_size;
-                    files[j].name=files[j+1].name;
-
-                    files[j+1].byte_size=t;
-                    files[j+1].name=s;
-                }
-            }
-        }
+        std::sort(files.begin(), files.end(), [](const fileStructure& a, const fileStructure& b){
+            return a.byte_size <b.byte_size; //ascending order
+        });
     }
 
         
     long long int maxFile(){
 
-        sortFileOnByte(); //ascending sort
+        sortFileOnByte(); 
         
         size_t size= files.size();
 
@@ -106,62 +97,30 @@ extern "C"{
 
 
     //sort file for search functionality
-     void sortFileOnName() {
-         if (files.size() < 2) {
+    void sortFileOnName() {
+        if (files.size() < 2) {
              return;
-         }
-
-         for (size_t i = 0; i < files.size() - 1; i++) {
-             for (size_t j = 0; j < files.size() - 1 - i; j++) {
-                // Compare names alphabetically
-                if (files[j].name > files[j+1].name) { 
-                    // Swap the entire fileStructure objects
-                    fileStructure temp = files[j];
-                    files[j] = files[j+1];
-                    files[j+1] = temp;
-                }
-            }
         }
+       
+        std::sort(files.begin(), files.end(), [](const fileStructure& a, const fileStructure& b){
+            return a.name < b.name;
+        });
     }
 
     
-    long long int searchFile(const char* fname){ //to search the file vector based on the file name.
-
-        sortFileOnName(); //to sort the vector before binary search.
-
-        int key = 0; //key - for search condition verification
-        size_t size = files.size();
-        if (size == 0) {
+    long long int searchFile(const char* fname){ //to search the files using hashmap 'fileMap'
+        
+        if(!fname){
             return -3;
         }
 
-        int low = 0;
-        int high = static_cast<int>(size) - 1;
-        int mid = 0;
-                
-        while (low <= high) {   //binary search algorithm
-            mid = low + (high - low) / 2;
+        auto it = fileMap.find(fname); 
+        
+        if(it != fileMap.end()){
+            return it->second;
+        }
 
-            if (files[mid].name == fname) {
-                key = 1;
-                break;
-            }
-            else if (files[mid].name < fname) {
-                low = mid + 1;
-            }
-            else {
-                if (mid == 0) {
-                    break;
-                }
-                high = mid - 1;
-            }
-        }
-        if (key == 1) {
-            return files[mid].byte_size;
-        }
-        else {
-            return -3;
-        }
+        return -3;
     }
             
         
