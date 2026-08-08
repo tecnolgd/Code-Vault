@@ -87,14 +87,15 @@ extern "C"{
         
     long long int maxFile(){
 
-        sortFileOnByte(); 
-        
-        size_t size= files.size();
-
-        if(size > 0){
-            return files[size-1].byte_size;//return the max bytes since the sort is ascending order
+        if(files.empty()){
+            return -1;
         }
-        return -1;
+
+        auto max_it = std::max_element(files.begin(), files.end(), [](const fileStructure& a, const fileStructure& b){
+            return a.byte_size < b.byte_size; //'<' is default in cpp for comparisions
+        });
+
+        return max_it->byte_size; 
     }
 
 
