@@ -17,8 +17,10 @@
 - `populateData()` — scan a directory and load regular file metadata
 - `getTotalBytes()` — compute the total byte size of loaded files
 - `getFileCount()` — return the number of loaded files
-- `sortFileOnByte()` / `maxFile()` — sort files by size and retrieve the largest size
-- `sortFileOnName()` / `searchFile()` — sort files by name and search by filename
+- `sortFileOnByte()` — sort files by size
+- `maxFile()` - return the largest file size 
+- `sortFileOnName()`— sort files by name
+- `searchFile()` - search by filename
 - `lineCount()` — count lines in a text file
 - `getFileName()` - returns the name of the file present at a given index
 - `getFileSize()` - returns the size(bytes) of the file present at a given index
