@@ -66,9 +66,8 @@ Returns the total byte size of all files loaded by the last successful `populate
 - `int getFileCount();`     
 Returns the number of files currently loaded.
 
-- `long long int sortFileOnByte(bool flag);`        
-Sorts loaded files in ascending order by size.
-If `flag` is `true`, returns the largest file size after sorting. If no files are loaded, returns `-1`.
+- `void sortFileOnByte();`        
+Sorts the loaded file list in ascending order based on size.
 
 - `long long int maxFile();`      
 Returns the maximum loaded file size, or `-1` if no files are loaded.
