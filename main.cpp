@@ -35,6 +35,8 @@ extern "C"{
 
                     file.byte_size = std::filesystem::file_size(entry.path());
                     files.push_back(file); //stack push operation
+                
+                    fileMap[file.name] = file.byte_size; //populate 'fileMap' hashmap
                 }
             }
         }
